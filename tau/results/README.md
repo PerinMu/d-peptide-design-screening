@@ -47,3 +47,14 @@ be extracted into separate directories with `tar -xzf`. They do not include
 model weights, input YAML batches, JSON sidecars, logs, or unrelated pilot and
 follow-up files. SHA-256 checksums are listed in
 [`structures/SHA256SUMS.txt`](structures/SHA256SUMS.txt).
+
+## Run provenance
+
+The [Tau run provenance record](run_provenance.md) summarizes the recovered
+BoltzGen environment metadata, Boltz-2 runtime details, Slurm resource
+allocations and task states, artifact snapshot identifiers, output counts, and
+known reproducibility limits. The BoltzGen scheduler job failed after
+producing the archived CIFs;
+the Boltz-2 Slurm record describes one completed representative array task,
+not the status of the full batch. The April Boltz-2 task log also records an
+affinity-model ligand-size warning.

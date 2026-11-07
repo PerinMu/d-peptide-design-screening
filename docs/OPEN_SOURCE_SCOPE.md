@@ -32,11 +32,19 @@ repository history.
 
 ## Provenance limits
 
-The Tau release was assembled from locally retained files. The original cloud
-storage directories and run-side JSON/log files were not available during this
-packaging pass. Accordingly, the Tau module publishes its retained score
-tables and CIF archives, records missing sidecars, and does not claim a full
-recovery of every intermediate artifact or exact software environment.
+The Tau cloud directories and scheduler records were inspected read-only to
+cross-check the released file counts and recover sanitized run metadata. The
+Tau module records BoltzGen environment-version evidence, runtime parameters,
+artifact snapshot identifiers, Slurm task states and allocations, and runtime
+details available in a representative Boltz-2 task log. See
+`tau/results/run_provenance.md`. The exact historical Boltz-2 package version,
+checkpoint-file hashes, and random seeds remain unverified; the representative
+Boltz-2 task must not be read as a completion record for the entire batch.
+
+Raw cloud logs and JSON sidecars are not redistributed because they contain
+cluster-specific paths and environment details. The public score tables and
+CIF archives retain the computational outputs selected for release, with
+archive checksums recorded alongside them.
 
 Some HPC collection scripts retain site-specific default paths; they collect
 provenance locally and warn users to review any generated bundle before sharing.

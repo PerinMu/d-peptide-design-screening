@@ -28,13 +28,16 @@ binding contacts are retained. Boltz-2 affinity-related outputs are used only
 as relative ranking signals. They are not measured affinities, inhibition
 values, or evidence of biological activity.
 
-The retained BoltzGen runtime configuration records four GPUs, a batch size of
-one, `multiplicity=1000`, `diffusion_samples=10`, 500 sampling steps, and three
-recycling steps. Boltz-2 jobs were dispatched with up to eight active jobs and
-a 20-second polling interval. The repository HPC templates show where to set
-cluster resources, model caches, and environment names. Tau-specific package
-versions, checkpoint hashes, and random seeds were not recoverable from the
-local release files.
+The remote BoltzGen environment metadata report version 0.2.0, and the April
+run log invokes that environment's Python 3.12 executable. A timestamped
+package freeze was not retained to confirm the historical version. The
+recovered configuration records four GPUs, a batch size of one, `multiplicity=1000`,
+`diffusion_samples=10`, 500 sampling steps, and three recycling steps. Its
+Slurm job ended in a failed state after producing 9,990 CIF files. A
+representative Boltz-2 array task completed on one RTX 4090; its exact Boltz
+package version and random seed were not recoverable. See the
+[run provenance](results/run_provenance.md) for the recovered job states,
+resource allocations, artifact snapshots, and limitations.
 
 ## Released data
 
