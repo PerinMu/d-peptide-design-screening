@@ -1,20 +1,26 @@
-# hIAPP D-peptide design
+# Computational D-peptide design for Tau and hIAPP
 
 [![Validation](https://github.com/PerinMu/hIAPP-D-peptide-design/actions/workflows/validate.yml/badge.svg)](https://github.com/PerinMu/hIAPP-D-peptide-design/actions/workflows/validate.yml)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Code, input files, and results for designing reverse-D peptides against human
-islet amyloid polypeptide (hIAPP). The workflow uses BoltzGen for peptide design,
-BoltzIF for sequence redesign, and Boltz-2 for complex prediction. Python scripts
-handle stereochemical encoding, score collection, ranking, and result export.
-The models are used as released; no training or fine-tuning was performed.
+Code, target inputs, model scores, and computational structures for de novo
+reverse-D peptide design and layered virtual screening against Tau and hIAPP.
+The repository combines two target-specific workflows and shared utilities for
+sequence extraction, reverse-D encoding, stereochemical SMILES, model-input
+generation, score collection, screening, and result export. No project wet-lab
+measurements, laboratory records, or assay-derived training labels are included.
 
-中文引导：本仓库用于区赛代码展示。安装后运行 `bash run.sh` 可复现筛选结果；
-完整设计流程见 [Notebook](notebooks/00_full_generation_to_selection.ipynb)，
-候选清单见 [results.csv](results/submission/results.csv)。其余说明均为英文。
+| Target | Structural template | Main computational release |
+|---|---|---|
+| Tau PHF6 | [PDB 5O3L](https://doi.org/10.2210/pdb5O3L/pdb) | [Tau workflow and data](tau/README.md): 9,473 merged screening records, 9,348 unique D-sequences, and archived BoltzGen/Boltz-2 structures |
+| hIAPP | [PDB 9ULZ](https://doi.org/10.2210/pdb9ULZ/pdb) | [CPU screening workflow](README.md#quick-start-hiapp-screening-reproduction), notebooks, score tables, and predicted structures |
 
-## Quick start
+The two target-specific score sets use different inputs and screening stages;
+their scores should not be compared directly. See the [open-source scope and
+provenance note](docs/OPEN_SOURCE_SCOPE.md) for data boundaries and sources.
+
+## Quick start: hIAPP screening reproduction
 
 The screening step runs on CPU using the score table included in this repository.
 
@@ -51,7 +57,7 @@ python scripts/validate_submission.py --output-dir /tmp/hiapp-results
 The validator checks candidate identities, ranks, review tiers, screening tables,
 CSV/Excel agreement, structure files, and run checksums.
 
-## Inputs and outputs
+## hIAPP inputs and outputs
 
 `run.sh` accepts `--scores`, `--final`, and `--output-dir`. Its defaults are:
 
@@ -77,7 +83,7 @@ missing-value conventions.
 The entry point and validator check the saved hIAPP run. A new campaign needs
 its own review record and expected counts.
 
-## Installation
+## hIAPP installation
 
 ### Analysis
 
@@ -132,7 +138,7 @@ BoltzGen 0.2.0 is confirmed in a historical log. Boltz 2.2.1 was recovered from
 the surviving environment after the run. A fresh install of these packages does
 not reproduce every historical dependency.
 
-## Notebooks
+## hIAPP notebooks
 
 | Notebook | Use |
 |---|---|
@@ -162,7 +168,7 @@ jupyter nbconvert --to notebook --execute \
   --ExecutePreprocessor.timeout=600
 ```
 
-## Workflow
+## hIAPP workflow
 
 ```text
 9ULZ target → BoltzGen → BoltzIF → reverse-D SMILES → Boltz-2
@@ -210,9 +216,9 @@ ranking pool. See [count reconciliation](docs/REPRODUCIBILITY.md) for details.
 | `data/` | Sequence tables, reference entries, and saved scores |
 | `results/` | Screening tables, final candidates, and predicted structures |
 | `environments/` | Recovered GPU package lists |
-| `wetlab/` | Data templates; no experimental measurements included |
+| `tau/` | Tau PHF6 inputs, literature reference peptides, screening scores, and structure archives |
 
-## Notes
+## hIAPP notes
 
 The 12 sequences are computational candidates awaiting experimental validation.
 Boltz-2 affinity outputs are used for relative ranking, and the sequence-property
@@ -221,9 +227,11 @@ Reverse-D conversion does not guarantee that the original backbone contacts are
 preserved.
 
 Historical random seeds and MSA response files were not retained. New model runs
-can produce different candidates and require a new structure review. Large raw
-model outputs and model caches are omitted from Git; the saved tables support
-reproduction of the reported screening results.
+can produce different candidates and require a new structure review. For the
+hIAPP campaign, model caches and bulk intermediate outputs are omitted; saved
+tables and selected predicted structures support reproduction of the screening
+results. The Tau module includes compressed CIF outputs for its main BoltzGen
+and Boltz-2 campaigns.
 
 ## Documentation
 
@@ -235,6 +243,7 @@ reproduction of the reported screening results.
 - [Reproducibility](docs/REPRODUCIBILITY.md)
 - [Production environment](docs/PRODUCTION_ENVIRONMENT.md)
 - [References](docs/REFERENCES.md)
+- [Open-source scope and provenance](docs/OPEN_SOURCE_SCOPE.md)
 
 ## Citation and license
 

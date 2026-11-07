@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=hiapp_bg_design
+#SBATCH --job-name=dpep_bg_design
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=8
 #SBATCH --output=logs/%x_%j.log
@@ -8,6 +8,7 @@
 set -euo pipefail
 
 : "${REPO_ROOT:?Set REPO_ROOT to the cloned repository}"
+: "${BOLTZGEN_INPUT:?Set BOLTZGEN_INPUT to the target input YAML}"
 : "${BOLTZGEN_OUTPUT:?Set BOLTZGEN_OUTPUT}"
 : "${BOLTZGEN_MOLDIR:?Set BOLTZGEN_MOLDIR}"
 : "${BOLTZGEN_DESIGN_CHECKPOINT:?Set BOLTZGEN_DESIGN_CHECKPOINT}"
@@ -23,10 +24,10 @@ if [[ "${BOLTZGEN_REUSE:-0}" == "1" ]]; then
   REUSE_ARGUMENT=(--reuse)
 fi
 
-boltzgen check configs/boltzgen/9ULZ.yaml
-boltzgen run configs/boltzgen/9ULZ.yaml \
+boltzgen check "${BOLTZGEN_INPUT}"
+boltzgen run "${BOLTZGEN_INPUT}" \
   --output "${BOLTZGEN_OUTPUT}" \
-  --protocol peptide-anything \
+  --protocol "${BOLTZGEN_PROTOCOL:-peptide-anything}" \
   --steps design \
   --num_designs "${NUM_DESIGNS:-2000}" \
   --diffusion_batch_size "${DIFFUSION_BATCH_SIZE:-10}" \

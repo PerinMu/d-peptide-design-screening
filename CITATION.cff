@@ -1,17 +1,19 @@
 cff-version: 1.2.0
-message: "If you use this workflow, please cite this repository, BoltzGen, Boltz-2, and PDB 9ULZ."
-title: "hIAPP D-peptide design"
+message: "If you use this workflow, please cite this repository, BoltzGen, Boltz-2, and the target structures PDB 5O3L and PDB 9ULZ."
+title: "Computational D-peptide design for Tau and hIAPP"
 type: software
-version: 1.0.0
-date-released: 2026-08-12
+version: 1.1.0
+date-released: 2026-11-07
 license: MIT
 authors:
-  - name: "hIAPP D-peptide Design Team"
+  - name: "D-peptide Design Team"
 repository-code: "https://github.com/PerinMu/hIAPP-D-peptide-design"
 keywords:
   - generative design
   - all-atom diffusion
   - hIAPP
+  - Tau
+  - PHF6
   - D-peptide
   - peptide design
   - BoltzGen

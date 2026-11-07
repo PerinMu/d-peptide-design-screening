@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=hiapp_boltz
+#SBATCH --job-name=dpep_boltz
 #SBATCH --time=01:00:00
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4

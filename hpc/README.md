@@ -3,9 +3,12 @@
 These scripts provide a path-configurable Slurm implementation of the complete
 GPU workflow. Inspect and edit every `#SBATCH` directive for your site.
 
-1. Follow `notebooks/00_full_generation_to_selection.ipynb` for the full order.
-2. Set `REPO_ROOT`, `PROJECT_ROOT`, environment names and model/cache paths.
-3. Submit BoltzGen with `run_boltzgen_design.slurm` and
+1. Follow `notebooks/00_full_generation_to_selection.ipynb` for the hIAPP order;
+   use [`tau/README.md`](../tau/README.md) for the Tau sequence-preparation path.
+2. Set `REPO_ROOT`, `BOLTZGEN_INPUT`, `PROJECT_ROOT`, environment names, and
+   model/cache paths. For Tau, set `BOLTZGEN_INPUT=tau/configs/boltzgen_input.yaml`;
+   for hIAPP, use the corresponding file under `configs/boltzgen/`.
+3. Submit BoltzGen with `run_boltzgen_design.slurm` and, when required,
    `run_boltzgen_inverse_folding.slurm`.
 4. Generate one YAML per peptide with `scripts/make_boltz_yaml.py`.
 5. Submit a single test with

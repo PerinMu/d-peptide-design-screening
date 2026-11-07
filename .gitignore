@@ -13,8 +13,24 @@ dispatch_state/
 *.tar.gz
 *.tar.gz.sha256
 *.zip
+wetlab/
 data/intermediate/backbones/
 data/intermediate/inverse_folding_structures/
 data/raw/boltz_outputs/
 results/submission/run_metadata.json
 results/submission/screening/
+
+# Local wet-lab source copies and wet-lab-derived artifacts. These files may
+# be used for analysis in the working tree but must not enter a GitHub payload.
+data/experimental_v2/
+results/experimental_v2/
+results/experimental_v3_local/
+
+# Model-iteration labels and candidate predictions are local wet-lab derivatives.
+results/tables/
+results/figures/
+results/reports/
+data/model_iteration_local/
+
+# Compressed, curated Tau prediction structures released with the paper code.
+!tau/results/structures/*.tar.gz

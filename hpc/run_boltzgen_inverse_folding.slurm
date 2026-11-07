@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH --job-name=hiapp_bg_ifold
+#SBATCH --job-name=dpep_bg_ifold
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=8
 #SBATCH --output=logs/%x_%j.log

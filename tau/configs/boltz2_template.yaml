@@ -1,0 +1,20 @@
+sequences:
+  - protein:
+      id: A
+      sequence: VQIVYKPVDLSKVTSKC
+      msa: empty
+
+  - ligand:
+      id: X
+      smiles: '__PEPTIDE_SMILES__'
+
+templates:
+  - cif: tau/configs/target_5O3L.cif
+    chain_id: A
+    template_id: A
+    force: true
+    threshold: 0.1
+
+properties:
+  - affinity:
+      binder: X
