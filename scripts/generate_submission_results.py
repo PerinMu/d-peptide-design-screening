@@ -106,7 +106,7 @@ def build_results(scores_path: Path, final_path: Path, structures_dir: Path) -> 
         "target_template": "PDB 9ULZ, chain D residues 19-37",
         "intended_binding_region": "hIAPP residues 21-37",
         "structure_file": selected["structure_file"].map(
-            lambda name: f"results/final_candidates/structures/{name}"
+            lambda name: f"targets/hiapp/results/final_candidates/structures/{name}"
         ),
         "structure_format": "mmCIF",
         "coordinate_unit": "angstrom",
@@ -199,7 +199,7 @@ def main() -> None:
     root = Path(__file__).resolve().parents[1]
     run_metadata = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "entry_point": "bash run.sh",
+        "entry_point": "bash targets/hiapp/run.sh",
         "repository_commit": git_revision(root),
         "track": TRACK,
         "model_and_version": MODEL_VERSION,
@@ -207,7 +207,7 @@ def main() -> None:
             "BoltzGen 0.2.0 is confirmed by the historical inverse-folding log. "
             "Boltz 2.2.1 is the still-installed environment recovered on 2026-08-15; "
             "historical prediction logs did not print its version. Checkpoint SHA256 values "
-            "and remaining evidence are recorded in MODEL_CARD.md."
+            "and remaining evidence are recorded in targets/hiapp/docs/MODEL_CARD.md."
         ),
         "inputs": {
             str(args.scores): sha256(args.scores),
@@ -225,7 +225,7 @@ def main() -> None:
         ),
         "code_sha256": {
             str(path.relative_to(root)): sha256(path)
-            for path in [root / "run.sh", root / "scripts/screen_candidates.py",
+            for path in [root / "targets/hiapp/run.sh", root / "scripts/screen_candidates.py",
                          root / "scripts/generate_submission_results.py"]
         },
         "structure_sha256": {

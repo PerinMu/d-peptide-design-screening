@@ -1,0 +1,2 @@
+f8cef194c04b459757c7f5d09576b4f6a1c5ddd66a57ce190cf5b507ebacedde  structures_and_raw_scores.tar.gz
+b0c447df5bf572379e0800ccdd9bdd3ba3affda88e3949c5082057799d54c9ee  model_scores.csv

@@ -1,0 +1,15 @@
+entities:
+  - protein:
+      id: Y
+      sequence: 6..12
+
+  - file:
+      path: targets/tau/configs/target_5O3L.cif
+      include:
+        - chain:
+            id: A
+            res_index: 1..17
+      binding_types:
+        - chain:
+            id: A
+            binding: 1..11

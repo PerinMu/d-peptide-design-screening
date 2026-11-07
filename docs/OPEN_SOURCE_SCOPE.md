@@ -11,8 +11,10 @@ experiment-derived labels, and manuscript drafts.
   Boltz-input, score collection, and screening code.
 - Target structures and input configurations for PDB 5O3L and PDB 9ULZ.
 - Project-generated sequence tables and model score tables.
-- Selected hIAPP predicted structures and the two compressed Tau campaign CIF
-  archives described in `tau/results/README.md`.
+- Main hIAPP BoltzGen/BoltzIF CIF+NPZ result archives, selected hIAPP
+  candidate structures, and a separate Boltz-2 follow-up prediction archive.
+- The two compressed Tau campaign CIF archives and a separate Tau Boltz-2
+  follow-up prediction archive.
 - A literature-derived Tau peptide reference table and the existing hIAPP
   literature reference data, with provenance notes.
 - Path-configurable HPC/Slurm templates and available environment records.
@@ -37,18 +39,19 @@ cross-check the released file counts and recover sanitized run metadata. The
 Tau module records BoltzGen environment-version evidence, runtime parameters,
 artifact snapshot identifiers, Slurm task states and allocations, and runtime
 details available in a representative Boltz-2 task log. See
-`tau/results/run_provenance.md`. The exact historical Boltz-2 package version,
+`targets/tau/results/run_provenance.md`. The exact historical Boltz-2 package version,
 checkpoint-file hashes, and random seeds remain unverified; the representative
 Boltz-2 task must not be read as a completion record for the entire batch.
 
-Raw cloud logs and JSON sidecars are not redistributed because they contain
-cluster-specific paths and environment details. The public score tables and
-CIF archives retain the computational outputs selected for release, with
-archive checksums recorded alongside them.
+Cluster logs, absolute-path collector bundles, and the full Boltz-2 inference
+tree are not redistributed. The manuscript-targeted follow-up archives retain
+only predicted CIFs and confidence/affinity JSON outputs, with local paths
+removed and checksums recorded alongside them.
 
-Some HPC collection scripts retain site-specific default paths; they collect
-provenance locally and warn users to review any generated bundle before sharing.
-The raw collector bundles and logs are not included in the release payload.
+HPC scripts use caller-supplied paths and environment names. Provenance
+collectors write locally; review generated bundles for machine-specific runtime
+details before sharing. Raw collector bundles and logs are not part of this
+release.
 
 The shared MIT license applies to repository code. PDB entries, upstream
 models, and literature-derived data retain their own attribution and terms;

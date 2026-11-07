@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this workflow, please cite this repository, BoltzGen, Boltz-2, and the target structures PDB 5O3L and PDB 9ULZ."
-title: "Computational D-peptide design for Tau and hIAPP"
+title: "De novo D-peptide design and multidimensional virtual screening"
 type: software
 version: 1.1.0
 date-released: 2026-11-07
 license: MIT
 authors:
   - name: "D-peptide Design Team"
-repository-code: "https://github.com/PerinMu/hIAPP-D-peptide-design"
+repository-code: "https://github.com/PerinMu/d-peptide-design-screening"
 keywords:
   - generative design
   - all-atom diffusion
@@ -16,5 +16,7 @@ keywords:
   - PHF6
   - D-peptide
   - peptide design
+  - virtual screening
+  - multi-target design
   - BoltzGen
   - Boltz-2

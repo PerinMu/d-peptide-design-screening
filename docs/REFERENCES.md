@@ -158,7 +158,7 @@ validated by that source.
 
 The complete grouped title-level source mapping covering all 76
 literature/reference entries is available in
-`data/designs/reference_inhibitor_sources.csv`. `doi_verified` means the DOI was
+`targets/hiapp/data/designs/reference_inhibitor_sources.csv`. `doi_verified` means the DOI was
 cross-checked during repository preparation; `title_from_source_workbook` means
 the English title was transcribed from the retained workbook and still requires
 primary-paper verification before any activity or mechanism claim is reused.

@@ -1,0 +1,22 @@
+version: 1
+
+sequences:
+  - protein:
+      id: [A, C, E]
+      sequence: VQIVYKPVDLSKVTSKC
+      msa: empty
+
+  - ligand:
+      id: Z
+      smiles: 'N[C@H]([C@@H](O)C)C(=O)N[C@H](CC(C)C)C(=O)N[C@H](CCCCN)C(=O)N[C@H]([C@H](C)CC)C(=O)N[C@H](C(C)C)C(=O)N[C@H](CC1=CNC2=CC=CC=C12)C(=O)N[C@H]([C@H](C)CC)C(=O)O'
+
+templates:
+  - cif: targets/tau/configs/target_5O3L.cif
+    chain_id: [A, C, E]
+    template_id: [A, C, E]
+    force: true
+    threshold: 0.1
+
+properties:
+  - affinity:
+      binder: Z

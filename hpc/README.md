@@ -1,51 +1,39 @@
-# Portable HPC templates
+# Slurm templates
 
-These scripts provide a path-configurable Slurm implementation of the complete
-GPU workflow. Inspect and edit every `#SBATCH` directive for your site.
+The scripts in this directory are starting points for GPU inference on a
+Slurm cluster. Review the resource directives, model environments, cache
+locations, and project paths before use.
 
-1. Follow `notebooks/00_full_generation_to_selection.ipynb` for the hIAPP order;
-   use [`tau/README.md`](../tau/README.md) for the Tau sequence-preparation path.
-2. Set `REPO_ROOT`, `BOLTZGEN_INPUT`, `PROJECT_ROOT`, environment names, and
-   model/cache paths. For Tau, set `BOLTZGEN_INPUT=tau/configs/boltzgen_input.yaml`;
-   for hIAPP, use the corresponding file under `configs/boltzgen/`.
-3. Submit BoltzGen with `run_boltzgen_design.slurm` and, when required,
-   `run_boltzgen_inverse_folding.slurm`.
-4. Generate one YAML per peptide with `scripts/make_boltz_yaml.py`.
-5. Submit a single test with
-   `sbatch --array=1-1%1 run_lig_array_large.slurm input/example.yaml`.
-6. Reproduce the historical dispatcher interface with
-   `bash submit_keep8.sh input/batch 8 20 state run_lig_array_large.slurm boltz_arr 1`.
-7. Recover incomplete jobs with `scripts/find_missing_model0.py`.
-8. Collect score JSON and CIF files using the repository scripts.
+## Target inputs
 
-The bounded dispatcher records submitted YAML stems in a state directory and
-limits jobs whose names start with the chosen prefix. It does not delete or
-overwrite model results.
+- hIAPP BoltzGen input: `targets/hiapp/configs/boltzgen/9ULZ.yaml`.
+- Tau BoltzGen input: `targets/tau/configs/boltzgen_input.yaml`.
+- The hIAPP end-to-end order and parameter switches are documented in
+  `targets/hiapp/notebooks/00_full_generation_to_selection.ipynb`.
+- Tau sequence preparation and released results are documented in
+  `targets/tau/README.md`.
 
-All resource requests, environment names, cache locations, output paths, and
-concurrency limits are controlled through command arguments or environment
-variables, making the templates portable across Slurm clusters.
+The reusable Slurm templates cover BoltzGen design, inverse folding,
+single-ligand prediction, bounded batch dispatch, and result collection. Set
+`REPO_ROOT`, input paths, environment names, caches, and output directories for
+the current cluster. The dispatcher records submitted input stems in its state
+directory and limits the number of active jobs. It does not delete or overwrite
+prediction results.
 
-## Historical provenance recovery
+## Provenance collection
 
-Two site-specific, read-only collectors recover reproducibility metadata from
-the original August 2026 cloud environments without rerunning a model:
+The read-only collectors recover package, model-file, GPU, and scheduler
+metadata without rerunning inference:
 
-- `collect_provenance_boltzgen_scz0223.sh` covers the Singularity-based
-  BoltzGen and BoltzIF environment.
-- `collect_provenance_boltz2_scxj525.sh` covers the Conda/CUDA Boltz-2
-  environment and records the installed MSA-server implementation clues.
+- `collect_provenance_boltzgen.sh`
+- `collect_provenance_boltz2.sh`
 
-Run the applicable collector once with `bash` on its login node. It submits
-itself as a one-GPU Slurm job, hashes checkpoints and containers without copying
-them, captures package/GPU/Slurm metadata, and writes a `.tar.gz` archive plus a
-SHA-256 sidecar under the project's `provenance/` directory. The collectors do
-not read shell history, copy predicted structures, or export credentials. Review
-the archive before publication because account paths and compute-node hostnames
-are retained as provenance evidence.
+Set the required environment and project paths before running a collector on a
+configured login node. Each collector submits itself as a short Slurm job and
+writes its bundle under the chosen project provenance directory. Review the
+bundle before sharing; raw records can include hostnames and filesystem paths.
 
-The August 2026 recovery bundles were verified locally and distilled into the
-credential-free [`production environment record`](../docs/PRODUCTION_ENVIRONMENT.md)
-and sanitized dependency snapshots under [`environments/`](../environments/).
-Raw collector archives, checksum sidecars, and logs are intentionally ignored by
-Git and must not be uploaded without a separate privacy review.
+Sanitized hIAPP environment facts are in
+`targets/hiapp/docs/PRODUCTION_ENVIRONMENT.md`; Tau run-specific records are in
+`targets/tau/results/run_provenance.md`. Raw collector archives, checksum
+sidecars, and logs are not part of the release.

@@ -1,0 +1,20 @@
+sequences:
+  - protein:
+      id: A
+      sequence: HSSNNFGAILSSTNVGSNTY
+      msa: empty
+
+  - ligand:
+      id: X
+      smiles: 'N[C@H](CC(=O)N)C(=O)N[C@H](CC1=CC=CC=C1)C(=O)NCC(=O)N[C@H](C)C(=O)N[C@H]([C@H](C)CC)C(=O)N[C@H](CC(C)C)C(=O)O'
+
+templates:
+  - cif: targets/hiapp/configs/boltz2/9ULZ.cif
+    chain_id: A
+    template_id: D
+    force: true
+    threshold: 0.1
+
+properties:
+  - affinity:
+      binder: X

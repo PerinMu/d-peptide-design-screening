@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=boltz_lig
 #SBATCH --time=02:00:00
-#SBATCH --partition=gpu_4090
+#SBATCH --partition=gpu
 #SBATCH --gpus=1
 #SBATCH --output=logs/%x_%j.log
 #SBATCH --error=logs/%x_%j.log
