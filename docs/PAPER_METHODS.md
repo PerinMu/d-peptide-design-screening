@@ -107,11 +107,16 @@ The source spreadsheets label the measurement field as IC50 (µM), but its cells
 also contain Kd, lag time, t50, inhibition percentages, ThT summaries, and
 non-numeric entries. Measurements were retained as text rather than
 harmonized across studies. These are literature annotations, not measurements
-from this project or a systematic review. The 76 hIAPP entries used as the P3
-descriptor reference set remain in
+from this project or a systematic review. The hIAPP bibliography resolves 76
+source entries to 37 unique sources. Because the source workbook supplied no
+SMILES, the descriptive hIAPP literature table adds RDKit 2025.9.2 isomeric
+SMILES computed from its retained sequence and modification annotations; its
+row-level notes expose structural assumptions. The 76 hIAPP entries used as
+the P3 descriptor reference set remain in
 [`reference_inhibitors_smiles.csv`](../targets/hiapp/data/designs/reference_inhibitors_smiles.csv);
-the richer literature table is linked by `reference_entry_id` and does not
-change screening scores.
+the descriptive table's generated SMILES do not replace those historical
+inputs or change screening scores. `reference_entry_id` preserves the source
+workbook crosswalk and `citation_id` joins to the normalized bibliography.
 
 ## Hierarchical screening and candidate selection
 

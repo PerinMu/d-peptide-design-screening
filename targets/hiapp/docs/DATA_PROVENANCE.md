@@ -90,14 +90,14 @@ independently inventoried here.
 | BoltzGen/BoltzIF upstream pretraining data | External pretrained models; model/package identifiers and author sources are in the Model Card | Exact datasets/releases, cutoff and acquisition dates, license applicability and overlap with the target/reference set have not been independently inventoried |
 | Boltz-2 upstream training data | External model; recovered package and checkpoint hashes recorded | Exact structure/affinity dataset versions, cutoffs and applicable data permissions need an upstream source-based inventory |
 | PDB 9ULZ | Accession, campaign selection date and local input structures retained | Campaign selection date is not a download timestamp; original retrieval log and applicable data-use terms should be retained if available |
-| Reference inhibitor workbook | 76 usable entries and a row-group source mapping | Exact workbook version/acquisition date, unverified original papers and permissions for any redistributed source material need confirmation |
+| Reference inhibitor workbook | 76 usable entries, 37 normalized source citations, and a source-entry crosswalk | Exact workbook version/acquisition date, source-row activity claims, and permissions for redistribution of source annotations need confirmation |
 | Runtime MSA | Prediction window and recovered endpoint default | Database releases, service version, requests and returned alignments unavailable |
 | Manual structure review | Final 12 identities, tiers and stage labels retained | A complete original 42-candidate review sheet with reasons, reviewer/date and rejected candidates is not deposited |
 
 The reference set contains 76 usable **entries**, not necessarily 76 independent
-papers. Source groups and their verification flags are given in
-`data/designs/reference_inhibitor_sources.csv`. No reference-set activity AUC or
-independent experimental validation is claimed.
+papers. Normalized citations, source types, and source-entry crosswalks are given
+in `data/designs/reference_inhibitor_sources.csv`. No reference-set activity
+AUC or independent experimental validation is claimed.
 
 Overlap with an external model's training data or an undisclosed evaluation
 set has not been independently checked.

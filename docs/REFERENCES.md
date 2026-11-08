@@ -169,9 +169,14 @@ were checked against these PubChem compound records:
     for CID 6288, L-Threonine.
     [PubChem record](https://pubchem.ncbi.nlm.nih.gov/compound/6288)
 
-The complete grouped title-level source mapping covering all 76
-literature/reference entries is available in
-`targets/hiapp/data/designs/reference_inhibitor_sources.csv`. `doi_verified` means the DOI was
-cross-checked during repository preparation; `title_from_source_workbook` means
-the English title was transcribed from the retained workbook and still requires
-primary-paper verification before any activity or mechanism claim is reused.
+The hIAPP source table and bibliography crosswalk in
+`targets/hiapp/data/designs/reference_inhibitor_sources.csv` cover all 76 source
+entries using 37 unique references. Each reference has a stable ID, normalized
+citation, DOI or sequence-database accession, and source type. The dfPSMα3 row
+was linked to the 2025 hIAPP study
+[doi:10.1038/s41598-025-27115-5](https://doi.org/10.1038/s41598-025-27115-5);
+the source workbook had instead cited a related paper on insulin aggregation.
+The cyclic hIAPP PACE records are linked to the primary selection study
+[doi:10.1038/s41589-024-01823-x](https://doi.org/10.1038/s41589-024-01823-x),
+not its research briefing. Citation normalization does not independently
+validate each source-workbook activity annotation.

@@ -6,12 +6,15 @@
 - `designs/merged_designs_reversed_smiles.csv`: D-sequence encoding and SMILES.
 - `designs/reference_inhibitors_smiles.csv`: literature/reference inhibitor set used
   only for descriptor-space context.
-- `designs/reference_inhibitor_sources.csv`: grouped English source-title mapping
-  covering every reference entry; DOI verification status is explicit.
+- `designs/reference_inhibitor_sources.csv`: normalized bibliography with one row
+  per unique source, stable `reference_id`, DOI/accession, citation status, and a
+  crosswalk to all 76 hIAPP source-entry IDs.
 - `reference/hiapp_literature_peptides.csv`: English-normalized, row-level
   peptide, assay-summary, and citation records transcribed from the source
-  inhibitor-information workbook. Its 76 `reference_entry_id` values join to
-  the source-title map above. This descriptive table is separate from the
+  inhibitor-information workbook. Its `citation_id` values join to the
+  bibliography above; `reference_entry_id` preserves the source-workbook
+  crosswalk. It contains 76 computed isomeric `smiles` strings and row-level
+  structure assumptions. This descriptive table is separate from the
   computational input table and does not alter screening scores.
 - `scored/merged_all_2_scored.csv`: 9,884-row structure, affinity and
   sequence-property table used by the reproducible notebook. It contains 9,806
@@ -22,11 +25,18 @@ Treat `targets/hiapp/data/scored/` as immutable analysis input. Reruns should
 write new outputs under `targets/hiapp/results/screening/` and document the
 source file checksum.
 
-Reference-inhibitor sequences and modifications were transcribed from the study
-workbook. A `title_from_source_workbook` status is traceable provenance, not a
-claim that the citation or experimental result has been independently verified.
-Verify the original paper before using any reference-set activity statement in a
-manuscript or presentation.
+The hIAPP source workbook did not contain SMILES. The released SMILES were
+computed from its sequence and modification annotations by
+`scripts/build_hiapp_reference_smiles.py` using RDKit 2025.9.2. The script marks
+assumptions such as unspecified termini, sugar anomers, and source-record
+discrepancies. Citation statuses distinguish primary research papers, a review,
+and sequence-database records. Literature activity annotations remain source
+summaries, not project measurements or a uniformly tested benchmark.
+
+To regenerate the literature table and its bibliography, install the pinned
+dependency with `python -m pip install -r requirements-reference-smiles.txt`
+and run `python scripts/build_hiapp_reference_smiles.py` from the repository
+root. This does not regenerate or modify the P3 descriptor input.
 
 For the complete schema, activity-evidence labels, source-field caveats, and
 copy-ready manuscript wording, see

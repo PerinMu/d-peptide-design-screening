@@ -21,6 +21,8 @@ jupyter nbconvert --to notebook --execute targets/hiapp/notebooks/01_reproduce_s
 Repository-facing prose, notebook text, user-visible code messages, and data
 annotations must remain in English, except for the short Chinese navigation
 in the root `README.md`. Scientific notation such as Greek letters may
-be retained when it is part of a molecule or method name. Update
-`targets/hiapp/data/designs/reference_inhibitor_sources.csv` whenever the reference set
-changes, and ensure that every usable reference ID remains covered exactly.
+be retained when it is part of a molecule or method name. When hIAPP reference
+records change, update the structure specifications and citations in
+`scripts/build_hiapp_reference_smiles.py`, regenerate the literature table and
+`targets/hiapp/data/designs/reference_inhibitor_sources.csv`, and ensure that
+every `reference_entry_id` maps to exactly one citation.
