@@ -12,6 +12,12 @@ import pandas as pd
 
 PRED_COLS = ["affinity_pred_value", "affinity_pred_value1", "affinity_pred_value2"]
 PROB_COLS = ["affinity_probability_binary", "affinity_probability_binary1", "affinity_probability_binary2"]
+P4_SCORE_REQUIRED_COLUMNS = PRED_COLS + PROB_COLS + [
+    "ptm", "iptm", "confidence_score",
+    "solubility_tendency_score_0_100", "aggregation_risk_score_0_100",
+    "sequence_stability_score_0_100", "peptide_drug_likeness_score_0_100",
+    "sequence_liability_count",
+]
 
 
 def favorable_percentile(series: pd.Series, higher_is_better: bool) -> pd.Series:
@@ -104,6 +110,18 @@ def compute_scores(table: pd.DataFrame) -> pd.DataFrame:
     return candidate
 
 
+def p4_eligibility_mask(candidate: pd.DataFrame) -> pd.Series:
+    """Apply the P4 gates, requiring every field used to calculate its score."""
+    complete = candidate[P4_SCORE_REQUIRED_COLUMNS].notna().all(axis=1)
+    return (
+        complete
+        & candidate["length_aa"].isin([11, 12])
+        & candidate["structure_bottleneck"].ge(0.75)
+        & candidate["solubility_tendency_score_0_100"].ge(40)
+        & candidate["aggregation_risk_score_0_100"].le(65)
+    )
+
+
 def select(candidate: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     complete = candidate[PRED_COLS + PROB_COLS].notna().all(axis=1)
     gate = complete & candidate["structure_bottleneck"].ge(0.65) \
@@ -144,10 +162,7 @@ def select(candidate: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Data
     candidate["p4_score"] = 0.50 * candidate["structure_emphasis"] \
         + 0.35 * candidate["affinity_consensus"] + 0.15 * candidate["developability_score"]
     p4_pool = candidate[~candidate["d_sequence"].isin(top32["d_sequence"])].copy()
-    p4_pool = p4_pool[p4_pool["length_aa"].isin([11, 12])
-                      & p4_pool["structure_bottleneck"].ge(0.75)
-                      & p4_pool["solubility_tendency_score_0_100"].ge(40)
-                      & p4_pool["aggregation_risk_score_0_100"].le(65)]
+    p4_pool = p4_pool[p4_eligibility_mask(p4_pool)]
     p4_pool = p4_pool.sort_values(["p4_score", "structure_bottleneck", "affinity_consensus"],
                                   ascending=False).drop_duplicates("d_sequence", keep="first")
     return hard_pool, top32, p4_pool

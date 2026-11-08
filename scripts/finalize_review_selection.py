@@ -28,6 +28,9 @@ def main() -> None:
     p4_count = int(selected["review_pool"].eq("P4").sum())
     if p4_count != args.expected_p4:
         raise ValueError(f"Expected {args.expected_p4} P4 rows, found {p4_count}")
+    for identity_column in ("d_sequence", "seq_rev", "name"):
+        if identity_column in selected and selected[identity_column].duplicated().any():
+            raise ValueError(f"Selected rows contain duplicate {identity_column} values")
     for column in ["reviewer", "review_date", "decision_reason"]:
         if selected[column].isna().any() or selected[column].astype(str).str.strip().eq("").any():
             raise ValueError(f"Selected rows require non-empty {column}")

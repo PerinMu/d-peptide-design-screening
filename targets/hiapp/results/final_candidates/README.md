@@ -8,3 +8,8 @@ complexes.
 Lower-case sequences denote the all-D data convention. Synthesis orders must
 explicitly specify D stereochemistry and any terminal modifications.
 
+`final_12.csv` preserves the historical selection table. Its
+`experimental_status` and `wetlab_activity` columns reflect the state recorded
+when the shortlist was assembled; they are not a current experimental-status
+claim. The public computational manifest does not include assay outcomes.
+

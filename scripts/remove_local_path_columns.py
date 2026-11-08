@@ -13,6 +13,8 @@ def main() -> None:
     parser.add_argument("input_csv", type=Path)
     parser.add_argument("output_csv", type=Path)
     args = parser.parse_args()
+    if args.input_csv.resolve() == args.output_csv.resolve():
+        raise ValueError("Input and output must differ; write the sanitized copy to a new path")
 
     with args.input_csv.open(encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)

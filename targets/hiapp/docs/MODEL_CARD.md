@@ -7,9 +7,10 @@ to redesign sequences, and Boltz-2 to predict hIAPP–peptide complexes. Project
 scripts reverse sequences, encode D stereochemistry, calculate sequence
 properties, rank candidates, and export the manually selected set.
 
-No model was trained or fine-tuned. The saved run contains 9,806 ranked candidates
-and 12 final sequences. These are computational results; experimental activity
-has not been established.
+No model was trained or fine-tuned. The saved run contains 9,806 ranked
+candidates and a 12-sequence computational shortlist. This release contains no
+assay measurements, so its prediction and heuristic scores cannot be read as
+experimental activity.
 
 ## Components and provenance
 
@@ -136,9 +137,9 @@ dissociation constants, or experimental effect sizes.
   experimentally calibrated predictors.
 - Manual structure review introduces expert judgment; review-stage provenance is
   retained, but a new stochastic generation run requires a new review.
-- Wet-lab validation is in progress, but no measured hIAPP
-  aggregation-inhibition value is included in the current public release.
-  Model scores must not be presented as wet-lab activity.
+- Experimental outcome data are outside this computational release. Their
+  absence here does not mean that experiments were not performed. Model scores
+  must not be presented as wet-lab activity.
 
 ## Data, leakage, and experimental boundary
 

@@ -25,8 +25,9 @@ Target structure and site
 The exact stages and filters differ between the two case studies. Boltz-2
 affinity outputs and project physicochemical scores are relative
 prioritization signals, not measured binding or inhibition values. See the
-[model card](MODEL_CARD.md) and [release scope](docs/OPEN_SOURCE_SCOPE.md) for
-interpretation and provenance limits.
+[computational Methods](docs/PAPER_METHODS.md), [model card](MODEL_CARD.md),
+and [release scope](docs/OPEN_SOURCE_SCOPE.md) for interpretation and
+provenance limits.
 
 ## Target case studies
 
@@ -50,6 +51,9 @@ bash targets/hiapp/run.sh --output-dir /tmp/hiapp-screening
 python scripts/validate_submission.py --output-dir /tmp/hiapp-screening
 ```
 
+The validator filename and `targets/hiapp/results/submission/` directory keep
+their historical names so existing reproduction commands remain usable.
+
 See [the hIAPP README](targets/hiapp/README.md) for data, candidate counts,
 models, and target-specific reproduction notes. The Tau README describes its
 inputs, released score tables, structures, and recovered run provenance.
@@ -62,7 +66,7 @@ inputs, released score tables, structures, and recovered run provenance.
 | `targets/tau/` | Tau inputs, reference peptides, scores, structures, and run provenance |
 | `scripts/` | Shared sequence, model-input, collection, scoring, and release utilities |
 | `hpc/` | Slurm templates and provenance collectors; configure paths for your cluster |
-| `docs/` | Shared references and release-scope notes |
+| `docs/` | Shared Methods, references, and release-scope notes |
 
 ## Citation and license
 

@@ -8,6 +8,20 @@ import csv
 from pathlib import Path
 
 
+CANONICAL_AMINO_ACIDS = frozenset("ACDEFGHIKLMNPQRSTVWY")
+
+
+def reverse_d_sequence(sequence: object) -> str:
+    """Return the lowercase reverse-D sequence for a canonical L sequence."""
+    normalized = "".join(str(sequence).split()).upper()
+    if not normalized:
+        raise ValueError("Empty sequence")
+    unknown = set(normalized) - CANONICAL_AMINO_ACIDS
+    if unknown:
+        raise ValueError(f"Noncanonical amino-acid symbols: {''.join(sorted(unknown))}")
+    return normalized[::-1].lower()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("input", type=Path)
@@ -25,10 +39,10 @@ def main() -> None:
             fields.append(args.output_column)
         rows = []
         for row_number, row in enumerate(reader, 2):
-            sequence = "".join(str(row[args.sequence_column]).split())
-            if not sequence:
-                raise ValueError(f"Empty sequence at CSV row {row_number}")
-            row[args.output_column] = sequence[::-1].lower()
+            try:
+                row[args.output_column] = reverse_d_sequence(row[args.sequence_column])
+            except ValueError as exc:
+                raise ValueError(f"{exc} at CSV row {row_number}") from exc
             rows.append(row)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)

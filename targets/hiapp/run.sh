@@ -44,5 +44,5 @@ mkdir -p "${OUTPUT_DIR}/screening"
   --output "${OUTPUT_DIR}/results.csv" \
   --metadata "${OUTPUT_DIR}/run_metadata.json"
 
-echo "Submission results: ${OUTPUT_DIR}/results.csv"
+echo "Candidate manifest: ${OUTPUT_DIR}/results.csv"
 echo "Run metadata: ${OUTPUT_DIR}/run_metadata.json"

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Compare a deposited-campaign rerun with committed results and audit its hashes.
+"""Compare the deposited hIAPP CPU reproduction with committed release outputs.
 
-This validates the historical hIAPP submission, not arbitrary new campaigns.
+The historical filename and results/submission path remain for compatibility.
 Run after run.sh. Paths may be absolute or relative to the current directory.
 """
 from __future__ import annotations
@@ -12,12 +12,14 @@ from pathlib import Path
 
 import pandas as pd
 
-from generate_submission_results import sha256, validate_final_review, validate_screening
+from generate_submission_results import sha256, validate_final_review, validate_manifest_integrity, validate_screening
+from screen_candidates import compute_scores, select
 
 
 def validate(output_dir: Path, root: Path) -> None:
     generated = pd.read_csv(output_dir / "results.csv")
     committed = pd.read_csv(root / "targets/hiapp/results/submission/results.csv")
+    validate_manifest_integrity(generated)
     # Preserve row/column ordering and compare numerical values to CSV precision.
     pd.testing.assert_frame_equal(generated, committed, check_dtype=False,
                                   rtol=0, atol=1e-6)
@@ -40,6 +42,14 @@ def validate(output_dir: Path, root: Path) -> None:
     }
     if set(metadata["inputs"].values()) != expected_inputs:
         raise ValueError("Run inputs differ from the deposited campaign")
+    raw_scores = pd.read_csv(root / "targets/hiapp/data/scored/merged_all_2_scored.csv")
+    scored = compute_scores(raw_scores)
+    hard_gate, main_review, p4_eligible = select(scored)
+    if (len(scored), len(hard_gate), len(main_review), len(p4_eligible)) != (9806, 904, 32, 30):
+        raise ValueError("Recomputed hIAPP counts differ from 9806 analysis, 904 hard gate, 32 P1-P3 and 30 P4")
+    if main_review["d_sequence"].nunique() + pd.read_csv(
+            output_dir / "screening/p4_top10.csv")["d_sequence"].nunique() != 42:
+        raise ValueError("The P1-P3 and P4 review pools must contain 42 distinct sequences")
     structures = {Path(name).name: sha256(root / name) for name in generated["structure_file"]}
     if metadata["structure_sha256"] != structures:
         raise ValueError("Structure hashes differ from the current deposited structures")
@@ -50,7 +60,7 @@ def validate(output_dir: Path, root: Path) -> None:
     screening = {p.name: sha256(p) for p in sorted((output_dir / "screening").glob("*.csv"))}
     if metadata["screening_sha256"] != screening:
         raise ValueError("Screening hashes differ from the recorded run")
-    print("PASS: 12 candidates; review tiers; screening tables; CSV; structures; run hashes")
+    print("PASS: 9,806 analyzed; 904 hard gate; 42 review candidates; 12 final; sequence/SMILES crosswalk; structures; hashes")
 
 
 def main() -> None:

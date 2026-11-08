@@ -17,6 +17,19 @@ def safe_name(value: str) -> str:
     return cleaned
 
 
+def set_template_cif(template: str, cif_path: str | Path) -> str:
+    cif_value = json.dumps(str(cif_path))
+    updated, substitutions = re.subn(
+        r"(?m)^(\s*-\s+cif:)\s*.*$",
+        lambda match: f"{match.group(1)} {cif_value}",
+        template,
+        count=1,
+    )
+    if substitutions != 1:
+        raise ValueError("Could not locate the first '- cif:' template line")
+    return updated
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("input_csv", type=Path)
@@ -32,12 +45,7 @@ def main() -> None:
     if template.count("__PEPTIDE_SMILES__") != 1:
         raise ValueError("Template must contain __PEPTIDE_SMILES__ exactly once")
     if args.template_cif:
-        cif_value = json.dumps(str(args.template_cif))
-        template, substitutions = re.subn(
-            r"(?m)^(\s*-\s+cif:)\s*.*$", rf"\1 {cif_value}", template, count=1
-        )
-        if substitutions != 1:
-            raise ValueError("Could not locate the first '- cif:' template line")
+        template = set_template_cif(template, args.template_cif)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     seen = set()

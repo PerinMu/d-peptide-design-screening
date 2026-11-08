@@ -156,6 +156,19 @@ validated by that source.
     2022;19:679-682.
     [doi:10.1038/s41592-022-01488-1](https://doi.org/10.1038/s41592-022-01488-1)
 
+## Stereochemistry reference structures
+
+The L-Ile and L-Thr SMILES reference fragments used by the reverse-D unit tests
+were checked against these PubChem compound records:
+
+31. National Center for Biotechnology Information. PubChem Compound Summary
+    for CID 6306, L-Isoleucine.
+    [PubChem record](https://pubchem.ncbi.nlm.nih.gov/compound/6306)
+
+32. National Center for Biotechnology Information. PubChem Compound Summary
+    for CID 6288, L-Threonine.
+    [PubChem record](https://pubchem.ncbi.nlm.nih.gov/compound/6288)
+
 The complete grouped title-level source mapping covering all 76
 literature/reference entries is available in
 `targets/hiapp/data/designs/reference_inhibitor_sources.csv`. `doi_verified` means the DOI was

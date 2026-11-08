@@ -34,10 +34,10 @@ or binding contacts.
 | Final computational candidates after structure review | 12 |
 
 The main priority score combines affinity-head consensus, structure quality,
-and sequence developability with weights 0.55, 0.30, and 0.15. Hard filters,
-priority tiers, P4 criteria, reference-set handling, and count reconciliation
-are described in [Methods](docs/METHODS.md) and
-[Reproducibility](docs/REPRODUCIBILITY.md).
+and sequence developability with weights 0.55, 0.30, and 0.15. Full equations,
+hard filters, priority tiers, P4 criteria, and model limitations are in the
+[shared computational Methods](../../docs/PAPER_METHODS.md). See
+[Reproducibility](docs/REPRODUCIBILITY.md) for count reconciliation.
 
 ## Reproduce the saved CPU screening
 
@@ -49,6 +49,9 @@ conda activate dpeptide-screening
 bash targets/hiapp/run.sh --output-dir /tmp/hiapp-screening
 python scripts/validate_submission.py --output-dir /tmp/hiapp-screening
 ```
+
+The validator and `results/submission/` path keep their historical names so
+existing reproduction commands remain usable.
 
 This recomputes the saved tables and exports the included manually reviewed
 candidate set. It does not rerun BoltzGen, BoltzIF, or Boltz-2. New stochastic

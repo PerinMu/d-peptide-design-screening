@@ -16,8 +16,9 @@ jobs:
       - run: python -m pip install -r targets/hiapp/requirements.txt
       - run: python -m compileall scripts
       - run: for file in targets/hiapp/run.sh hpc/*.sh hpc/*.slurm; do bash -n "$file" || exit; done
-      - run: bash targets/hiapp/run.sh --output-dir /tmp/competition-submission
-      - run: python scripts/validate_submission.py --output-dir /tmp/competition-submission
+      - run: python -m unittest discover -s tests -v
+      - run: bash targets/hiapp/run.sh --output-dir /tmp/dpeptide-reproduction
+      - run: python scripts/validate_submission.py --output-dir /tmp/dpeptide-reproduction
       - run: >-
           python scripts/prepare_structure_review.py
           targets/hiapp/results/screening/p1_p2_p3_top32.csv
@@ -25,7 +26,7 @@ jobs:
           /tmp/structure_review.csv
       - run: >-
           python -c "import ast,json,pathlib;
-          [ast.parse(''.join(c['source'])) for p in pathlib.Path('notebooks').glob('*.ipynb')
+          [ast.parse(''.join(c['source'])) for p in pathlib.Path('targets/hiapp/notebooks').glob('*.ipynb')
           for c in json.loads(p.read_text())['cells'] if c['cell_type']=='code']"
       - run: >-
           python -c "import csv;
