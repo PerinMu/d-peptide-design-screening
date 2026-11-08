@@ -1,7 +1,8 @@
 # Results
 
 - `screening/`: regenerated hard-gate, P1-P3 and P4 tables.
-- `final_candidates/final_12.csv`: final synthesis manifest with priority labels.
+- `final_candidates/final_12.csv`: historical selection table with priority
+  labels and legacy status fields.
 - `final_candidates/structures/`: Boltz-2 model-0 predicted complexes used in
   manual structural review.
 - `structures/`: 1,990 BoltzGen design and 7,960 BoltzIF redesign CIF/NPZ
@@ -16,6 +17,6 @@
   generated on each reproduction run. This machine-specific file is intentionally
   untracked.
 
-All released scores and structures are computational outputs. Assay outcomes
-and laboratory records are outside this release; absence from these files does
-not indicate whether an assay was performed.
+The released scores and structures are computational outputs. The legacy
+status fields in `final_12.csv` are not current experimental-status claims;
+the computational release contains no assay outcomes or laboratory records.

@@ -1,45 +1,30 @@
 # hIAPP case study
 
-This target-specific release is one of two parallel applications of the
-repository's computational D-peptide design and layered virtual-screening
-workflow. It contains the hIAPP inputs, source and scored sequences, screening
-tables, selected predicted complexes, and CPU reproduction environment.
+This target module contains a de novo D-peptide design and multi-parameter
+hierarchical virtual screening campaign against the hIAPP amyloid fibril. PDB
+9ULZ chain D residues 19–37 were used as the template,
+with residues 21–37 as the design region. BoltzGen generated initial L-peptide
+hypotheses, and BoltzIF redesigned sequences on generated backbones.
 
-## Target and workflow
-
-PDB 9ULZ chain D residues 19–37 were used as the hIAPP fibril template, with
-residues 21–37 specified as the design binding region. The workflow is:
-
-```text
-9ULZ → BoltzGen generation → BoltzIF redesign → reverse-D encoding
-→ Boltz-2 prediction → physicochemical scoring → layered screening
-→ candidate diversity and structure review
-```
-
-BoltzGen/BoltzIF produce L-amino-acid sequence and structure hypotheses. The
-project reverses the sequence and encodes D stereochemistry in SMILES. This
-retro-inverso conversion does not guarantee preservation of backbone geometry
-or binding contacts.
-
-## Main campaign counts
+## Screening counts
 
 | Stage | Count |
 |---|---:|
-| Requested / completed BoltzGen designs | 2,000 / 1,990 |
-| Unique BoltzGen sequences | 1,956 |
-| Raw / unique BoltzIF sequences | 7,960 / 7,854 |
-| Merged rows / unique sequences | 9,810 / 9,808 |
-| Rows in the scored design/IF analysis pool | 9,806 |
-| Candidates passing the main filters | 904 |
-| Final computational candidates after structure review | 12 |
+| Retained BoltzGen outputs / unique sequences | 1,990 / 1,956 |
+| BoltzIF outputs / unique sequences | 7,960 / 7,854 |
+| Merged records / unique sequences | 9,810 / 9,808 |
+| Design/IF analysis pool | 9,806 |
+| Main hard gate | 904 |
+| Structure-review pool | 42 (12 P1, 12 P2, 8 P3, 10 P4) |
+| Final manually selected computational candidates | 12 |
 
-The main priority score combines affinity-head consensus, structure quality,
-and sequence developability with weights 0.55, 0.30, and 0.15. Full equations,
-hard filters, priority tiers, P4 criteria, and model limitations are in the
-[shared computational Methods](../../docs/PAPER_METHODS.md). See
-[Reproducibility](docs/REPRODUCIBILITY.md) for count reconciliation.
+Two rows labeled `design; IF_02` are outside the historical 9,806-row analysis
+pool. The 42-row review pool includes the top ten of 30 P4-eligible candidates.
+The original 42-row review sheet and candidate-level decisions were not
+retained, so the CPU workflow reproduces the ranking tables but not the complete
+manual selection.
 
-## Reproduce the saved CPU screening
+## Reproduce the CPU screening
 
 From the repository root:
 
@@ -50,32 +35,10 @@ bash targets/hiapp/run.sh --output-dir /tmp/hiapp-screening
 python scripts/validate_submission.py --output-dir /tmp/hiapp-screening
 ```
 
-The validator and `results/submission/` path keep their historical names so
-existing reproduction commands remain usable.
-
-This recomputes the saved tables and exports the included manually reviewed
-candidate set. It does not rerun BoltzGen, BoltzIF, or Boltz-2. New stochastic
-inference requires separate model assets and cluster resources; configure the
-[HPC templates](../../hpc/README.md) for the local environment.
-
-## Contents
-
-- `configs/`: PDB 9ULZ structures and BoltzGen/Boltz-2 inputs.
-- `data/`: design sequences, reference-inhibitor metadata, the English
-  literature-peptide table, and model scores.
-- `results/`: screening tables, final candidate manifest, selected CIFs, raw
-  BoltzGen/BoltzIF structure archives, and separate follow-up Boltz-2 models.
-- `notebooks/`: full GPU workflow and CPU ranking reproduction.
-- `environments/`: sanitized production package snapshots.
-- `docs/`: hIAPP methods, data provenance, environment, and model card.
-
-## Interpretation and limitations
-
-Affinity-head predictions and sequence-property scores are relative ranking
-signals, not calibrated affinity, aggregation-inhibition, or activity values.
-The final 12 are computational candidates, not evidence of biological effect.
-No assay measurements or laboratory records are part of this target release.
-For model versions, structures, leakage controls, and evidence boundaries, see
-the [hIAPP model card](docs/MODEL_CARD.md),
-[data provenance](docs/DATA_PROVENANCE.md), and
-[shared project references](../../docs/REFERENCES.md).
+This uses the deposited Boltz-2 scores and does not rerun model inference.
+Detailed thresholds, score equations, and production provenance are in
+[Computational Methods](../../docs/PAPER_METHODS.md) and
+[Reproducibility](docs/REPRODUCIBILITY.md). Boltz-2 affinity outputs are relative
+model signals, and descriptor composites are heuristics; neither is measured
+affinity or biological activity. See the shared [Model Card](../../MODEL_CARD.md)
+for interpretation limits.

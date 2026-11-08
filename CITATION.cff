@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this workflow, please cite this repository, BoltzGen, Boltz-2, and the target structures PDB 5O3L and PDB 9ULZ."
-title: "De novo D-peptide design and multidimensional virtual screening"
+title: "De novo D-peptide design and multi-parameter hierarchical virtual screening"
 type: software
 version: 1.1.0
 date-released: 2026-11-07
 license: MIT
 authors:
-  - name: "D-peptide Design Team"
+  - name: "PerinMu"
 repository-code: "https://github.com/PerinMu/d-peptide-design-screening"
 keywords:
   - generative design

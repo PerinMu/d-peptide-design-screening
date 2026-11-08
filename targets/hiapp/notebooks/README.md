@@ -18,7 +18,9 @@ processing its output. New runs may produce different sequences and counts.
 
 [01_reproduce_screening.ipynb](01_reproduce_screening.ipynb) uses the saved score
 table to reproduce the filters and rankings. It checks candidate counts, tiers,
-structure files, and final-selection membership.
+structure files, and final-selection membership. Derived tables are written to
+`/tmp/hiapp-screening-notebook` by default; set `HIAPP_SCREENING_OUTPUT` to use
+another directory.
 
 ```bash
 jupyter lab targets/hiapp/notebooks/01_reproduce_screening.ipynb

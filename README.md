@@ -1,47 +1,49 @@
-# De novo D-peptide design and multidimensional virtual screening
+# De novo D-peptide design and multi-parameter hierarchical virtual screening
 
-This repository documents a computational workflow for reverse-D peptide
-candidate generation and prioritization. It combines target-conditioned
-design, sequence redesign, stereochemistry-aware encoding, complex prediction,
-sequence-property assessment, and layered candidate screening.
-
-The framework is evaluated in two parallel target case studies: human islet
-amyloid polypeptide (hIAPP) and Tau PHF6. Each target has its own structures,
-inputs, scores, and run record. Target-specific scores are not directly
-comparable. The release excludes project laboratory records and measurements.
-It separately includes literature-curated peptide reference tables with
-source-reported outcomes, which are not results from this project.
+Code and computational data for structure-guided D-peptide design and
+screening against Tau and hIAPP amyloid fibrils. The targets are parallel case
+studies with distinct generation records and screening workflows.
 
 ## Workflow
 
 ```text
-Target structure and site
-  → BoltzGen design / BoltzIF sequence redesign
-  → reverse-D sequence and stereochemical SMILES
+Fibril structure and binding region
+  → BoltzGen design (both targets; BoltzIF redesign is documented for hIAPP)
+  → retro-inverso sequence conversion and stereochemical SMILES
   → Boltz-2 complex prediction
-  → confidence, affinity-head, and sequence-property assessment
-  → filtering, diversity prioritization, and structure review
+  → sequence descriptors and multi-parameter hierarchical virtual screening
+  → candidate structure review
 ```
 
-The exact stages and filters differ between the two case studies. Boltz-2
-affinity outputs and project physicochemical scores are relative
-prioritization signals, not measured binding or inhibition values. See the
-[computational Methods](docs/PAPER_METHODS.md), [model card](MODEL_CARD.md),
-and [release scope](docs/OPEN_SOURCE_SCOPE.md) for interpretation and
-provenance limits.
+Boltz-2 outputs and sequence-property scores are computational prioritization
+signals, not experimental measurements. The affinity module has limited
+validation for peptide-sized ligands; see the [Model Card](MODEL_CARD.md).
 
-## Target case studies
+## Data
 
-| Target | Template | Released results |
+| Target | Template | Released screening records |
 |---|---|---|
-| hIAPP | [PDB 9ULZ](https://doi.org/10.2210/pdb9ULZ/pdb) | 9,806 ranked design/sequence-redesign records, layered screening tables, and 12 manually reviewed computational candidates. See [the hIAPP case study](targets/hiapp/README.md). |
-| Tau PHF6 | [PDB 5O3L](https://doi.org/10.2210/pdb5O3L/pdb) | 9,473 merged screening records and compressed BoltzGen/Boltz-2 structure collections. See [the Tau case study](targets/tau/README.md). |
+| Tau PHF6 | [PDB 5O3L](https://doi.org/10.2210/pdb5O3L/pdb) | 9,473 score records, 9,348 distinct D sequences; 123 records have `filter_passed=4` (106 distinct sequences). The original filter rule is unavailable. See [Tau](targets/tau/README.md). |
+| hIAPP | [PDB 9ULZ](https://doi.org/10.2210/pdb9ULZ/pdb) | 9,806 analysis rows → 904 hard-gate candidates → 42 structure-review candidates → 12 manually selected computational candidates. See [hIAPP](targets/hiapp/README.md). |
 
-## Reproduce the saved hIAPP screening
+Target inputs, score tables, structures, literature-derived reference tables,
+and run records are under [`targets/`](targets/). Manuscript aliases FI-11 and
+KV-12 are linked to the released records in the
+[candidate ID crosswalk](docs/CANDIDATE_ID_CROSSWALK.csv). LG-11 remains
+unmapped.
 
-The hIAPP CPU workflow recomputes the published ranking from the included score
-table. It does not rerun the GPU models or automatically choose the manually
-reviewed final set.
+The manuscript draft includes an ROC analysis, but this release has no ROC
+script or complete positive-label definition. It contains 54 literature
+records with Boltz-2 metrics and 76 sequence-reference records; the recorded
+evidence classes do not identify 54 unambiguous positives. See the
+[Methods audit](docs/PAPER_METHODS.md#release-audit-notes).
+
+## Reproduce the hIAPP CPU screening
+
+This regenerates the saved ranking from the released score table. It does not
+rerun BoltzGen, BoltzIF, or Boltz-2, and it cannot reproduce the full manual
+selection from the 42-row review pool because that original review sheet and
+candidate-level decisions were not retained.
 
 ```bash
 git clone https://github.com/PerinMu/d-peptide-design-screening.git
@@ -52,26 +54,12 @@ bash targets/hiapp/run.sh --output-dir /tmp/hiapp-screening
 python scripts/validate_submission.py --output-dir /tmp/hiapp-screening
 ```
 
-The validator filename and `targets/hiapp/results/submission/` directory keep
-their historical names so existing reproduction commands remain usable.
-
-See [the hIAPP README](targets/hiapp/README.md) for data, candidate counts,
-models, and target-specific reproduction notes. The Tau README describes its
-inputs, released score tables, structures, and recovered run provenance.
-
-## Repository layout
-
-| Path | Contents |
-|---|---|
-| `targets/hiapp/` | hIAPP inputs, screening data, results, notebooks, and environment records |
-| `targets/tau/` | Tau inputs, reference peptides, scores, structures, and run provenance |
-| `targets/{tau,hiapp}/data/reference/` | English literature-curated peptide reference tables |
-| `scripts/` | Shared sequence, model-input, collection, scoring, and release utilities |
-| `hpc/` | Slurm templates and provenance collectors; configure paths for your cluster |
-| `docs/` | Shared Methods, reference-data definitions, citations, and release-scope notes |
+Detailed parameters and equations are in [Computational Methods](docs/PAPER_METHODS.md).
+The [release scope](docs/OPEN_SOURCE_SCOPE.md) describes included data and
+provenance. Cluster templates are documented under [`hpc/`](hpc/README.md).
 
 ## Citation and license
 
 See [CITATION.cff](CITATION.cff) and [References](docs/REFERENCES.md). Repository
-code is available under the [MIT License](LICENSE); upstream models, structures,
-and literature data retain their own terms.
+code is distributed under the [MIT License](LICENSE); upstream models, PDB
+structures, and literature-derived data retain their respective terms.

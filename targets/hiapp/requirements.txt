@@ -6,4 +6,5 @@ matplotlib==3.10.3
 seaborn==0.13.2
 jupyterlab==4.4.3
 nbclient==0.10.2
+nbconvert==7.17.2
 ipykernel==6.29.5
