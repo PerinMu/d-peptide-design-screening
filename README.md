@@ -8,8 +8,9 @@ sequence-property assessment, and layered candidate screening.
 The framework is evaluated in two parallel target case studies: human islet
 amyloid polypeptide (hIAPP) and Tau PHF6. Each target has its own structures,
 inputs, scores, and run record. Target-specific scores are not directly
-comparable. The release contains computational materials only; it excludes
-laboratory records and measured assay outcomes.
+comparable. The release excludes project laboratory records and measurements.
+It separately includes literature-curated peptide reference tables with
+source-reported outcomes, which are not results from this project.
 
 ## Workflow
 
@@ -64,9 +65,10 @@ inputs, released score tables, structures, and recovered run provenance.
 |---|---|
 | `targets/hiapp/` | hIAPP inputs, screening data, results, notebooks, and environment records |
 | `targets/tau/` | Tau inputs, reference peptides, scores, structures, and run provenance |
+| `targets/{tau,hiapp}/data/reference/` | English literature-curated peptide reference tables |
 | `scripts/` | Shared sequence, model-input, collection, scoring, and release utilities |
 | `hpc/` | Slurm templates and provenance collectors; configure paths for your cluster |
-| `docs/` | Shared Methods, references, and release-scope notes |
+| `docs/` | Shared Methods, reference-data definitions, citations, and release-scope notes |
 
 ## Citation and license
 

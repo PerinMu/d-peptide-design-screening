@@ -15,8 +15,9 @@ experiment-derived labels, and manuscript drafts.
   candidate structures, and a separate Boltz-2 follow-up prediction archive.
 - The two compressed Tau campaign CIF archives and a separate Tau Boltz-2
   follow-up prediction archive.
-- A literature-derived Tau peptide reference table and the existing hIAPP
-  literature reference data, with provenance notes.
+- English-normalized Tau and hIAPP literature-peptide reference tables, with
+  source citations, evidence labels, and provenance notes. These contain
+  literature-reported summaries rather than project assay data.
 - Path-configurable HPC/Slurm templates and available environment records.
 
 ## Excluded

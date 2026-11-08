@@ -8,6 +8,11 @@
   only for descriptor-space context.
 - `designs/reference_inhibitor_sources.csv`: grouped English source-title mapping
   covering every reference entry; DOI verification status is explicit.
+- `reference/hiapp_literature_peptides.csv`: English-normalized, row-level
+  peptide, assay-summary, and citation records transcribed from the source
+  inhibitor-information workbook. Its 76 `reference_entry_id` values join to
+  the source-title map above. This descriptive table is separate from the
+  computational input table and does not alter screening scores.
 - `scored/merged_all_2_scored.csv`: 9,884-row structure, affinity and
   sequence-property table used by the reproducible notebook. It contains 9,806
   analyzed design/IF records, two merged shared-source records and 76 literature
@@ -22,3 +27,7 @@ workbook. A `title_from_source_workbook` status is traceable provenance, not a
 claim that the citation or experimental result has been independently verified.
 Verify the original paper before using any reference-set activity statement in a
 manuscript or presentation.
+
+For the complete schema, activity-evidence labels, source-field caveats, and
+copy-ready manuscript wording, see
+[`docs/LITERATURE_PEPTIDE_DATA.md`](../../../docs/LITERATURE_PEPTIDE_DATA.md).

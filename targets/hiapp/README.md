@@ -61,7 +61,8 @@ inference requires separate model assets and cluster resources; configure the
 ## Contents
 
 - `configs/`: PDB 9ULZ structures and BoltzGen/Boltz-2 inputs.
-- `data/`: design sequences, reference-inhibitor metadata, and model scores.
+- `data/`: design sequences, reference-inhibitor metadata, the English
+  literature-peptide table, and model scores.
 - `results/`: screening tables, final candidate manifest, selected CIFs, raw
   BoltzGen/BoltzIF structure archives, and separate follow-up Boltz-2 models.
 - `notebooks/`: full GPU workflow and CPU ranking reproduction.

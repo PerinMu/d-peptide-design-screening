@@ -17,19 +17,23 @@ that sequence with explicit stereochemistry and free termini.
 ## Literature reference peptides
 
 `reference/tau_literature_peptides.csv` contains the 62 populated records from
-the `D-peptides` sheet of the local literature-compilation workbook. It includes
-43 entries labeled D-peptide and 19 labeled L-peptide, representing 57 unique
-sequence strings. The original reported sequence, SMILES, assay target, IC50
-field, result text, and reference text are retained as source values; the
-source row number points back to the sheet. Blank and non-numeric values such
-as `ND`, `/`, `No`, and `<6.25` remain as recorded.
+the `D-peptides` sheet of the source workbook. It includes 43 records labeled
+D-peptide and 19 labeled L-peptide, representing 57 distinct sequence
+notations. Each output row maps to a source worksheet row. The table uses
+English field names and summaries, stable release record IDs, source citations,
+and an activity-evidence annotation that preserves negative controls,
+non-inhibitory entries, and missing activity information.
 
-This is a literature-derived reference table, not a dataset of project
-experiments. The source annotations and numeric values have not been
-independently verified, so consult the cited papers before quantitative use.
-The source sheet also contains entries labeled as negative controls and entries
-without activity values. The table should not be interpreted as a complete,
-uniformly measured positive-control benchmark.
+The original worksheet labels its measurement column `IC50/µM`, but some cells
+contain other endpoints or free text. `source_metric_text` therefore remains
+text and is not a harmonized potency value. Some citations were linked from an
+explicit source serial group when the row citation cell was blank; the status
+is shown in `citation_status` and the assignment is described in
+[`docs/LITERATURE_PEPTIDE_DATA.md`](../../../docs/LITERATURE_PEPTIDE_DATA.md).
+Ten rows have no sufficiently clear row-level or group citation. Source SMILES
+are transcribed, not independently chemically validated. This is a
+literature-derived reference collection, not project experimental data or a
+uniform benchmark.
 
 ## Provenance and licensing
 

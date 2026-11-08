@@ -91,6 +91,28 @@ Their formulae, residue constants, and assumptions are listed in
 They are study-specific heuristics, not validated property predictions or
 measurements.
 
+## Literature-derived peptide reference set
+
+Literature-reported peptide records were curated from the populated Tau
+`D-peptides` worksheet and hIAPP inhibitor-information worksheet. The release
+contains 62 Tau records (43 source-labeled D-peptides and 19 L-peptides,
+representing 57 sequence notations) and 76 hIAPP records (76 distinct sequence
+notations). Records remain at source-row granularity, so repeated Tau sequences
+reported against different constructs are traceable. The tables retain
+negative controls, non-inhibitory or mixed-evidence records, and modified
+peptide analogues. English summaries, source metric strings, and citations are
+provided in [`docs/LITERATURE_PEPTIDE_DATA.md`](LITERATURE_PEPTIDE_DATA.md).
+
+The source spreadsheets label the measurement field as IC50 (µM), but its cells
+also contain Kd, lag time, t50, inhibition percentages, ThT summaries, and
+non-numeric entries. Measurements were retained as text rather than
+harmonized across studies. These are literature annotations, not measurements
+from this project or a systematic review. The 76 hIAPP entries used as the P3
+descriptor reference set remain in
+[`reference_inhibitors_smiles.csv`](../targets/hiapp/data/designs/reference_inhibitors_smiles.csv);
+the richer literature table is linked by `reference_entry_id` and does not
+change screening scores.
+
 ## Hierarchical screening and candidate selection
 
 The hIAPP analysis pool contains 9,806 design/IF rows. For each of three

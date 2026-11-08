@@ -49,7 +49,7 @@ resource allocations, artifact snapshots, and limitations.
 | [`data/designs/run_10000_seq.csv`](data/designs/run_10000_seq.csv) | 8,964 unique BoltzGen-derived L-sequences; `count` records CIF occurrences |
 | [`data/designs/run_10000_seq_reversed.csv`](data/designs/run_10000_seq_reversed.csv) | The same sequences in the reverse-D convention |
 | [`data/designs/run_10000_seq_reversed_smiles.csv`](data/designs/run_10000_seq_reversed_smiles.csv) | Reverse-D sequences and explicit stereochemical SMILES |
-| [`data/reference/tau_literature_peptides.csv`](data/reference/tau_literature_peptides.csv) | 62 literature-compiled D- and L-peptide records; source fields are retained |
+| [`data/reference/tau_literature_peptides.csv`](data/reference/tau_literature_peptides.csv) | 62 English-normalized literature records, including D- and L-peptides, controls, citations, and activity annotations |
 | [`results/boltz2_bg10000_scores.csv`](results/boltz2_bg10000_scores.csv) | 8,927 Boltz-2 score records for the BG_10000 batch, with local file paths removed |
 | [`results/boltz2_merged_screening_scores.csv`](results/boltz2_merged_screening_scores.csv) | 9,473 merged score records across the retained Tau batches |
 | [`results/structures/`](results/structures/README.md) | Compressed CIF outputs for the main BoltzGen and Boltz-2 campaigns |
