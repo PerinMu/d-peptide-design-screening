@@ -20,3 +20,6 @@
 The released scores and structures are computational outputs. The legacy
 status fields in `final_12.csv` are not current experimental-status claims;
 the computational release contains no assay outcomes or laboratory records.
+
+The [recovered screening files](recovered_screening/README.md) include the
+model-0 structure index, preserved score exports and portable prediction YAMLs.

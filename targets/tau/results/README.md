@@ -62,3 +62,8 @@ affinity-model ligand-size warning.
 The separate `manuscript_predictions/` directory contains 2026-10-31 Boltz-2
 structure and score outputs for the segment and five-chain target contexts.
 These follow-up runs are not included in the target-wide screening table.
+
+The [recovered screening files](recovered_screening/README.md) include the
+model-0 structure index, preserved score exports and portable prediction YAMLs.
+See [the final ten candidates](final_candidates/README.md) for the
+Supplementary Table 1 crosswalk and same-sequence score alternatives.

@@ -146,22 +146,20 @@ class DepositedDataIntegrityTests(unittest.TestCase):
             self.scored["d_sequence"].eq("fsltiegssti"), "smiles"
         ].iloc[0])
 
-        kv = crosswalk.loc[crosswalk["manuscript_alias"].eq("KV-12")]
-        self.assertEqual(len(kv), 2)
-        self.assertEqual(set(kv["d_sequence"]), {"ksltvvkyviqv"})
-        self.assertEqual(set(kv["source_csv_line"].astype(int)), {19, 20})
-        self.assertEqual(set(kv["source_id"]), {"D-ksltvvkyviqv", "VQIVYKVVTLSK_1"})
-        self.assertEqual(set(kv["source_group_field"]), {"description"})
-        self.assertTrue(kv["mapping_status"].eq("multiple_source_records").all())
+        self.assertEqual(len(crosswalk), 22)
+        self.assertFalse(crosswalk.duplicated(["target", "manuscript_alias"]).any())
+        lg = crosswalk.loc[crosswalk["manuscript_alias"].eq("LG-11")].iloc[0]
+        self.assertEqual((lg["d_sequence"], lg["source_id"]), ("lnvsislttag", "GATTLSISVNL_1"))
 
-        # Resolve the crosswalk's recorded line numbers against immutable source rows.
-        source = ROOT / "targets/tau/results/boltz2_merged_screening_scores.csv"
-        with source.open(newline="", encoding="utf-8-sig") as handle:
-            rows = list(csv.DictReader(handle))
-        for row in kv.itertuples(index=False):
-            source_row = rows[int(row.source_csv_line) - 2]
-            self.assertEqual(source_row["D_sequence"], "D-ksltvvkyviqv")
-            self.assertEqual(source_row["sample_id"], row.source_id)
+        kv = crosswalk.loc[crosswalk["manuscript_alias"].eq("KV-12")].iloc[0]
+        self.assertEqual(kv["source_id"], "D-ksltvvkyviqv")
+        self.assertEqual(int(kv["source_csv_line"]), 19)
+        alternatives = pd.read_csv(ROOT / "targets/tau/results/final_candidates/score_alternatives.csv")
+        kv_rows = alternatives.loc[alternatives["manuscript_alias"].eq("KV-12")]
+        self.assertEqual(set(kv_rows["source_csv_line"]), {19, 20})
+        self.assertEqual(set(kv_rows["source_id"]), {"D-ksltvvkyviqv", "VQIVYKVVTLSK_1"})
+        self.assertEqual(kv_rows.loc[kv_rows["matches_supplement_scores"], "source_id"].tolist(),
+                         ["D-ksltvvkyviqv"])
 
     def test_roc_reference_rows_have_heterogeneous_labels_and_incomplete_name_join(self) -> None:
         scored = pd.read_csv(ROOT / "targets/hiapp/data/scored/merged_all_2_scored.csv")

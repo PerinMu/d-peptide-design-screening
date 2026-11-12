@@ -1,0 +1,50 @@
+target,local_scope,suffix,count,scope_note
+tau,BoltzGen primary,cif,9991,primary_generation_cif_published
+tau,BoltzGen primary,csv,1,primary_generation_cif_published
+tau,BoltzGen primary,npz,9990,primary_generation_cif_published
+tau,BoltzGen primary,yaml,3,primary_generation_cif_published
+tau,BoltzGen project,cif,17345,includes_primary_and_pilot_data
+tau,BoltzGen project,csv,12,includes_primary_and_pilot_data
+tau,BoltzGen project,gz,1,includes_primary_and_pilot_data
+tau,BoltzGen project,npz,17330,includes_primary_and_pilot_data
+tau,BoltzGen project,sh,2,includes_primary_and_pilot_data
+tau,BoltzGen project,yaml,22,includes_primary_and_pilot_data
+tau,Boltz-2 inputs and collections,cif,9778,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,csv,39,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,gz,2,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,json,39,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,npz,108,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,sh,5,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,tsv,14,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,yaml,10475,includes_primary_supplementary_and_pilots
+tau,Boltz-2 inputs and collections,zip,2,includes_primary_supplementary_and_pilots
+tau,Boltz-2 working outputs,cif,288,other_runs_not_attributed_to_primary_screen
+tau,Boltz-2 working outputs,csv,16,other_runs_not_attributed_to_primary_screen
+tau,Boltz-2 working outputs,gz,1,other_runs_not_attributed_to_primary_screen
+tau,Boltz-2 working outputs,json,37,other_runs_not_attributed_to_primary_screen
+tau,Boltz-2 working outputs,npz,22,other_runs_not_attributed_to_primary_screen
+tau,Boltz-2 working outputs,sh,8,other_runs_not_attributed_to_primary_screen
+tau,Boltz-2 working outputs,tsv,8,other_runs_not_attributed_to_primary_screen
+tau,Boltz-2 working outputs,yaml,1,other_runs_not_attributed_to_primary_screen
+hiapp,BoltzGen primary,cif,1990,primary_generation_archive_published
+hiapp,BoltzGen primary,npz,1990,primary_generation_archive_published
+hiapp,BoltzGen primary,yaml,1,primary_generation_archive_published
+hiapp,BoltzIF primary,cif,7960,primary_generation_archive_published
+hiapp,BoltzIF primary,npz,7960,primary_generation_archive_published
+hiapp,BoltzIF primary,yaml,1,primary_generation_archive_published
+hiapp,Boltz-2 inputs,csv,2,validated_primary_yaml_published
+hiapp,Boltz-2 inputs,yaml,9885,validated_primary_yaml_published
+hiapp,Boltz-2 inputs,zip,2,validated_primary_yaml_published
+hiapp,Boltz-2 collections,cif,9768,three_primary_collections_published
+hiapp,Boltz-2 collections,csv,5,three_primary_collections_published
+hiapp,Boltz-2 collections,gz,1,three_primary_collections_published
+hiapp,Boltz-2 collections,tsv,3,three_primary_collections_published
+hiapp,Design project,cif,20697,includes_primary_follow_up_and_pilots
+hiapp,Design project,csv,15,includes_primary_follow_up_and_pilots
+hiapp,Design project,gz,1,includes_primary_follow_up_and_pilots
+hiapp,Design project,json,8,includes_primary_follow_up_and_pilots
+hiapp,Design project,npz,10930,includes_primary_follow_up_and_pilots
+hiapp,Design project,sh,10,includes_primary_follow_up_and_pilots
+hiapp,Design project,tsv,3,includes_primary_follow_up_and_pilots
+hiapp,Design project,yaml,9894,includes_primary_follow_up_and_pilots
+hiapp,Design project,zip,2,includes_primary_follow_up_and_pilots

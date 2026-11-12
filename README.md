@@ -27,10 +27,11 @@ validation for peptide-sized ligands; see the [Model Card](MODEL_CARD.md).
 | hIAPP | [PDB 9ULZ](https://doi.org/10.2210/pdb9ULZ/pdb) | 9,806 analysis rows → 904 hard-gate candidates → 42 structure-review candidates → 12 manually selected computational candidates. See [hIAPP](targets/hiapp/README.md). |
 
 Target inputs, score tables, structures, literature-derived reference tables,
-and run records are under [`targets/`](targets/). Manuscript aliases FI-11 and
-KV-12 are linked to the released records in the
-[candidate ID crosswalk](docs/CANDIDATE_ID_CROSSWALK.csv). LG-11 remains
-unmapped.
+and run records are under [`targets/`](targets/). The
+[22-candidate crosswalk](docs/CANDIDATE_ID_CROSSWALK.csv) links Supplementary
+Tables 1 and 3 to the computational release. The
+[recovery audit](docs/COMPUTATIONAL_DATA_RECOVERY.md) documents coverage,
+candidate score discrepancies, and archive verification.
 
 The manuscript draft includes an ROC analysis, but this release has no ROC
 script or complete positive-label definition. It contains 54 literature
