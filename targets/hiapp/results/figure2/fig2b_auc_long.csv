@@ -1,0 +1,125 @@
+field,metric,direction,comparison,first_n,second_n,auc
+confidence_score,Confidence score,higher,Dataset positives vs Original designs,51,1934,0.7051726585153193
+confidence_score,Confidence score,higher,Dataset positives vs Redesigned variants,51,7776,0.5324754901960784
+confidence_score,Confidence score,higher,Original designs vs Redesigned variants,1934,7776,0.3478659245321962
+confidence_score,Confidence score,higher,Dataset positives vs All designs,51,9710,0.5668726398901476
+ptm,pTM,higher,Dataset positives vs Original designs,51,1934,0.7835938925725409
+ptm,pTM,higher,Dataset positives vs Redesigned variants,51,7776,0.6411255345759703
+ptm,pTM,higher,Original designs vs Redesigned variants,1934,7776,0.29454655376392136
+ptm,pTM,higher,Dataset positives vs All designs,51,9710,0.6695018275075221
+iptm,ipTM,higher,Dataset positives vs Original designs,51,1934,0.7411440274144818
+iptm,ipTM,higher,Dataset positives vs Redesigned variants,51,7776,0.6345038529815218
+iptm,ipTM,higher,Original designs vs Redesigned variants,1934,7776,0.37675762215881287
+iptm,ipTM,higher,Dataset positives vs All designs,51,9710,0.6557440277861917
+complex_plddt,pLDDT,higher,Dataset positives vs Original designs,51,1934,0.6644159214875195
+complex_plddt,pLDDT,higher,Dataset positives vs Redesigned variants,51,7776,0.4782689824901154
+complex_plddt,pLDDT,higher,Original designs vs Redesigned variants,1934,7776,0.3407646854958486
+complex_plddt,pLDDT,higher,Dataset positives vs All designs,51,9710,0.5153450051493306
+complex_iplddt,ipLDDT,higher,Dataset positives vs Original designs,51,1934,0.6550074010990126
+complex_iplddt,ipLDDT,higher,Dataset positives vs Redesigned variants,51,7776,0.43697424957637376
+complex_iplddt,ipLDDT,higher,Original designs vs Redesigned variants,1934,7776,0.32204026602150815
+complex_iplddt,ipLDDT,higher,Dataset positives vs All designs,51,9710,0.4804012439167222
+complex_pde,PDE,lower,Dataset positives vs Original designs,51,1934,0.7441247440030822
+complex_pde,PDE,lower,Dataset positives vs Redesigned variants,51,7776,0.6646367909303639
+complex_pde,PDE,lower,Original designs vs Redesigned variants,1934,7776,0.4135527180921011
+complex_pde,PDE,lower,Dataset positives vs All designs,51,9710,0.6804688919852184
+complex_ipde,iPDE,lower,Dataset positives vs Original designs,51,1934,0.7218707545065596
+complex_ipde,iPDE,lower,Dataset positives vs Redesigned variants,51,7776,0.6213083999031711
+complex_ipde,iPDE,lower,Original designs vs Redesigned variants,1934,7776,0.3949102201348194
+complex_ipde,iPDE,lower,Dataset positives vs All designs,51,9710,0.6413380182144949
+affinity_pred_value1,Affinity pred value 1,lower,Dataset positives vs Original designs,51,1934,0.635815236125474
+affinity_pred_value1,Affinity pred value 1,lower,Dataset positives vs Redesigned variants,51,7776,0.5399948559670782
+affinity_pred_value1,Affinity pred value 1,lower,Original designs vs Redesigned variants,1934,7776,0.4038734780684396
+affinity_pred_value1,Affinity pred value 1,lower,Dataset positives vs All designs,51,9710,0.5590799862684518
+affinity_probability_binary1,Affinity probability 1,higher,Dataset positives vs Original designs,51,1934,0.586207595758055
+affinity_probability_binary1,Affinity probability 1,higher,Dataset positives vs Redesigned variants,51,7776,0.4689340756878883
+affinity_probability_binary1,Affinity probability 1,higher,Original designs vs Redesigned variants,1934,7776,0.3454196828679766
+affinity_probability_binary1,Affinity probability 1,higher,Dataset positives vs All designs,51,9710,0.49229215888209044
+affinity_pred_value2,Affinity pred value 2,lower,Dataset positives vs Original designs,51,1934,0.4809092199444411
+affinity_pred_value2,Affinity pred value 2,lower,Dataset positives vs Redesigned variants,51,7776,0.3796876260792383
+affinity_pred_value2,Affinity pred value 2,lower,Original designs vs Redesigned variants,1934,7776,0.37839246178414426
+affinity_pred_value2,Affinity pred value 2,lower,Dataset positives vs All designs,51,9710,0.39984854910038164
+affinity_probability_binary2,Affinity probability 2,higher,Dataset positives vs Original designs,51,1934,0.6482044731025812
+affinity_probability_binary2,Affinity probability 2,higher,Dataset positives vs Redesigned variants,51,7776,0.41012819736948275
+affinity_probability_binary2,Affinity probability 2,higher,Original designs vs Redesigned variants,1934,7776,0.2127623815861708
+affinity_probability_binary2,Affinity probability 2,higher,Dataset positives vs All designs,51,9710,0.45754730316431413
+sequence_length_aa,Sequence length,increasing,Dataset positives vs Original designs,73,1954,0.4905041993241822
+sequence_length_aa,Sequence length,increasing,Dataset positives vs Redesigned variants,73,7852,0.4913110000767626
+sequence_length_aa,Sequence length,increasing,Original designs vs Redesigned variants,1954,7852,0.5016103636309599
+sequence_length_aa,Sequence length,increasing,Dataset positives vs All designs,73,9806,0.4911502323151328
+molecular_weight_da_est,Molecular weight,increasing,Dataset positives vs Original designs,73,1954,0.5499712567126092
+molecular_weight_da_est,Molecular weight,increasing,Dataset positives vs Redesigned variants,73,7852,0.5278028806900258
+molecular_weight_da_est,Molecular weight,increasing,Original designs vs Redesigned variants,1954,7852,0.4428377126273105
+molecular_weight_da_est,Molecular weight,increasing,Dataset positives vs All designs,73,9806,0.5322202788899164
+net_charge_ph7_est,Net charge at pH 7,increasing,Dataset positives vs Original designs,73,1954,0.8088711599669102
+net_charge_ph7_est,Net charge at pH 7,increasing,Dataset positives vs Redesigned variants,73,7852,0.7829817374859559
+net_charge_ph7_est,Net charge at pH 7,increasing,Original designs vs Redesigned variants,1954,7852,0.48403932969766683
+net_charge_ph7_est,Net charge at pH 7,increasing,Dataset positives vs All designs,73,9806,0.7881406128202191
+absolute_charge_density,Absolute charge density,increasing,Dataset positives vs Original designs,73,1954,0.7414576351986091
+absolute_charge_density,Absolute charge density,increasing,Dataset positives vs Redesigned variants,73,7852,0.6207754415592572
+absolute_charge_density,Absolute charge density,increasing,Original designs vs Redesigned variants,1954,7852,0.393021538169545
+absolute_charge_density,Absolute charge density,increasing,Dataset positives vs All designs,73,9806,0.644823270069485
+isoelectric_point_est,Isoelectric point,increasing,Dataset positives vs Original designs,73,1954,0.822552263709146
+isoelectric_point_est,Isoelectric point,increasing,Dataset positives vs Redesigned variants,73,7852,0.777833411258976
+isoelectric_point_est,Isoelectric point,increasing,Original designs vs Redesigned variants,1954,7852,0.47564868829747464
+isoelectric_point_est,Isoelectric point,increasing,Dataset positives vs All designs,73,9806,0.7867443471846982
+gravy_kd,GRAVY hydropathy,increasing,Dataset positives vs Original designs,73,1954,0.6254013544397863
+gravy_kd,GRAVY hydropathy,increasing,Dataset positives vs Redesigned variants,73,7852,0.24613570227287002
+gravy_kd,GRAVY hydropathy,increasing,Original designs vs Redesigned variants,1954,7852,0.10648230102338503
+gravy_kd,GRAVY hydropathy,increasing,Dataset positives vs All designs,73,9806,0.3217103590477175
+polar_fraction,Polar fraction,increasing,Dataset positives vs Original designs,73,1954,0.22439744254847802
+polar_fraction,Polar fraction,increasing,Dataset positives vs Redesigned variants,73,7852,0.5609425048325529
+polar_fraction,Polar fraction,increasing,Original designs vs Redesigned variants,1954,7852,0.8630098219309008
+polar_fraction,Polar fraction,increasing,Dataset positives vs All designs,73,9806,0.4938805986829422
+hydrophobic_fraction,Hydrophobic fraction,increasing,Dataset positives vs Original designs,73,1954,0.7957298691829896
+hydrophobic_fraction,Hydrophobic fraction,increasing,Dataset positives vs Redesigned variants,73,7852,0.4541980404608546
+hydrophobic_fraction,Hydrophobic fraction,increasing,Original designs vs Redesigned variants,1954,7852,0.12528690967129355
+hydrophobic_fraction,Hydrophobic fraction,increasing,Dataset positives vs All designs,73,9806,0.5222536383930443
+aromatic_fraction,Aromatic fraction,increasing,Dataset positives vs Original designs,73,1954,0.7779230521164874
+aromatic_fraction,Aromatic fraction,increasing,Dataset positives vs Redesigned variants,73,7852,0.8256870250315773
+aromatic_fraction,Aromatic fraction,increasing,Original designs vs Redesigned variants,1954,7852,0.5462770243882346
+aromatic_fraction,Aromatic fraction,increasing,Dataset positives vs All designs,73,9806,0.8161693008753377
+max_hydrophobic_run,Max hydrophobic run,increasing,Dataset positives vs Original designs,73,1954,0.7909031000687035
+max_hydrophobic_run,Max hydrophobic run,increasing,Dataset positives vs Redesigned variants,73,7852,0.5048273191020175
+max_hydrophobic_run,Max hydrophobic run,increasing,Original designs vs Redesigned variants,1954,7852,0.26373115664355573
+max_hydrophobic_run,Max hydrophobic run,increasing,Dataset positives vs All designs,73,9806,0.5618324257723116
+solubility_tendency_score_0_100,Solubility tendency,higher,Dataset positives vs Original designs,73,1954,0.29212293714333787
+solubility_tendency_score_0_100,Solubility tendency,higher,Dataset positives vs Redesigned variants,73,7852,0.621000495467519
+solubility_tendency_score_0_100,Solubility tendency,higher,Original designs vs Redesigned variants,1954,7852,0.859804769765743
+solubility_tendency_score_0_100,Solubility tendency,higher,Dataset positives vs All designs,73,9806,0.555466460288501
+aggregation_risk_score_0_100,Aggregation risk,lower,Dataset positives vs Original designs,73,1954,0.167482228235723
+aggregation_risk_score_0_100,Aggregation risk,lower,Dataset positives vs Redesigned variants,73,7852,0.5482505111689544
+aggregation_risk_score_0_100,Aggregation risk,lower,Original designs vs Redesigned variants,1954,7852,0.8718286444045966
+aggregation_risk_score_0_100,Aggregation risk,lower,Dataset positives vs All designs,73,9806,0.4723764315389795
+passive_permeability_tendency_0_100,Passive permeability tendency,higher,Dataset positives vs Original designs,73,1954,0.45869028757308505
+passive_permeability_tendency_0_100,Passive permeability tendency,higher,Dataset positives vs Redesigned variants,73,7852,0.3997742482501622
+passive_permeability_tendency_0_100,Passive permeability tendency,higher,Original designs vs Redesigned variants,1954,7852,0.3700048583023394
+passive_permeability_tendency_0_100,Passive permeability tendency,higher,Dataset positives vs All designs,73,9806,0.41151419734632694
+sequence_liability_count,Sequence liability count,lower,Dataset positives vs Original designs,73,1954,0.5256095680094222
+sequence_liability_count,Sequence liability count,lower,Dataset positives vs Redesigned variants,73,7852,0.35113817961046484
+sequence_liability_count,Sequence liability count,lower,Original designs vs Redesigned variants,1954,7852,0.2952680500205699
+sequence_liability_count,Sequence liability count,lower,Dataset positives vs All designs,73,9806,0.38590435266079753
+sequence_stability_score_0_100,Sequence stability,higher,Dataset positives vs Original designs,73,1954,0.46902034463902637
+sequence_stability_score_0_100,Sequence stability,higher,Dataset positives vs Redesigned variants,73,7852,0.2880454504218452
+sequence_stability_score_0_100,Sequence stability,higher,Original designs vs Redesigned variants,1954,7852,0.28937815685368673
+sequence_stability_score_0_100,Sequence stability,higher,Dataset positives vs All designs,73,9806,0.32410754947348425
+peptide_drug_likeness_score_0_100,Drug likeness,higher,Dataset positives vs Original designs,73,1954,0.2009190841407159
+peptide_drug_likeness_score_0_100,Drug likeness,higher,Dataset positives vs Redesigned variants,73,7852,0.46586856851757513
+peptide_drug_likeness_score_0_100,Drug likeness,higher,Original designs vs Redesigned variants,1954,7852,0.8479928185244839
+peptide_drug_likeness_score_0_100,Drug likeness,higher,Dataset positives vs All designs,73,9806,0.4130732093015459
+structure_bottleneck,"min(pTM, ipTM)",higher,Dataset positives vs Original designs,51,1934,0.7407384877425635
+structure_bottleneck,"min(pTM, ipTM)",higher,Dataset positives vs Redesigned variants,51,7776,0.6322394698620188
+structure_bottleneck,"min(pTM, ipTM)",higher,Original designs vs Redesigned variants,1934,7776,0.3762523286457203
+structure_bottleneck,"min(pTM, ipTM)",higher,Dataset positives vs All designs,51,9710,0.6538498818682983
+affinity_consensus,Affinity consensus,higher,Dataset positives vs Original designs,51,1934,0.6502473791998702
+affinity_consensus,Affinity consensus,higher,Dataset positives vs Redesigned variants,51,7776,0.41377062656338254
+affinity_consensus,Affinity consensus,higher,Original designs vs Redesigned variants,1934,7776,0.24044041725713994
+affinity_consensus,Affinity consensus,higher,Dataset positives vs All designs,51,9710,0.46087114557460473
+structure_quality,Structure quality,higher,Dataset positives vs Original designs,51,1934,0.7403633635460389
+structure_quality,Structure quality,higher,Dataset positives vs Redesigned variants,51,7776,0.6214306967643024
+structure_quality,Structure quality,higher,Original designs vs Redesigned variants,1934,7776,0.3749500292044889
+structure_quality,Structure quality,higher,Dataset positives vs All designs,51,9710,0.6451192423416329
+developability_score,Developability score,higher,Dataset positives vs Original designs,73,1954,0.25361394259755193
+developability_score,Developability score,higher,Dataset positives vs Redesigned variants,73,7852,0.4109798393568692
+developability_score,Developability score,higher,Original designs vs Redesigned variants,1954,7852,0.7342895446518004
+developability_score,Developability score,higher,Dataset positives vs All designs,73,9806,0.37962220502404176

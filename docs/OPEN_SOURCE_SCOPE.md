@@ -34,12 +34,10 @@ Boltz-2 package version and checkpoint hash are unknown. The hIAPP Boltz-2
 version is based on a recovered environment rather than a per-job log. The
 full Boltz-2 inference tree and service-side MSA records are not redistributed.
 
-The manuscript draft contains an ROC analysis, but the release has no ROC code,
-complete positive-label definition, or derived ROC result table. The score table
-contains 54 literature-reference rows with Boltz-2 metrics, while the literature
-table contains 76 records with heterogeneous source annotations. See the
-[Methods audit](PAPER_METHODS.md#release-audit-notes) before describing the ROC figure
-as reproducible.
+The [Fig. 2 analysis](../targets/hiapp/results/figure2/README.md) provides
+a stable-ID mapping of literature references, the positive-label rule,
+directional AUCs and Prism source values. All inputs are computational or
+curated literature records.
 
 The repository code is under MIT. PDB structures, upstream models, and
 literature-derived data retain their respective attribution and terms; consult

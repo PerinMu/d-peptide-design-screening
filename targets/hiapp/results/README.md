@@ -1,5 +1,6 @@
 # Results
 
+- [`figure2/`](figure2/README.md): directional AUC matrix and Prism source data.
 - `screening/`: regenerated hard-gate, P1-P3 and P4 tables.
 - `final_candidates/final_12.csv`: historical selection table with priority
   labels and legacy status fields.

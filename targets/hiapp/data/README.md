@@ -5,8 +5,8 @@
 - `designs/merged_designs.csv`: 9,808 unique sequences after cross-source merge.
 - `designs/merged_designs_reversed_smiles.csv`: D-sequence encoding and SMILES.
 - `designs/reference_inhibitors_smiles.csv`: literature/reference set used by
-  the committed P3 descriptor novelty calculation. It does not define or
-  reproduce the ROC labels shown in the manuscript draft.
+  the committed P3 descriptor novelty calculation. The separate
+  [Fig. 2 analysis](../results/figure2/README.md) uses the curated evidence labels.
 - `designs/reference_inhibitor_sources.csv`: normalized bibliography with one row
   per unique source, stable `reference_id`, DOI/accession, citation status, and a
   crosswalk to all 76 hIAPP source-entry IDs.

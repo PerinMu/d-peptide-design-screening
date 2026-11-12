@@ -1,0 +1,125 @@
+field,metric,cohort,cohort_n,effective_n,missing_n
+confidence_score,Confidence score,Dataset positives,73,51,22
+confidence_score,Confidence score,Original designs,1954,1934,20
+confidence_score,Confidence score,Redesigned variants,7852,7776,76
+confidence_score,Confidence score,All designs,9806,9710,96
+ptm,pTM,Dataset positives,73,51,22
+ptm,pTM,Original designs,1954,1934,20
+ptm,pTM,Redesigned variants,7852,7776,76
+ptm,pTM,All designs,9806,9710,96
+iptm,ipTM,Dataset positives,73,51,22
+iptm,ipTM,Original designs,1954,1934,20
+iptm,ipTM,Redesigned variants,7852,7776,76
+iptm,ipTM,All designs,9806,9710,96
+complex_plddt,pLDDT,Dataset positives,73,51,22
+complex_plddt,pLDDT,Original designs,1954,1934,20
+complex_plddt,pLDDT,Redesigned variants,7852,7776,76
+complex_plddt,pLDDT,All designs,9806,9710,96
+complex_iplddt,ipLDDT,Dataset positives,73,51,22
+complex_iplddt,ipLDDT,Original designs,1954,1934,20
+complex_iplddt,ipLDDT,Redesigned variants,7852,7776,76
+complex_iplddt,ipLDDT,All designs,9806,9710,96
+complex_pde,PDE,Dataset positives,73,51,22
+complex_pde,PDE,Original designs,1954,1934,20
+complex_pde,PDE,Redesigned variants,7852,7776,76
+complex_pde,PDE,All designs,9806,9710,96
+complex_ipde,iPDE,Dataset positives,73,51,22
+complex_ipde,iPDE,Original designs,1954,1934,20
+complex_ipde,iPDE,Redesigned variants,7852,7776,76
+complex_ipde,iPDE,All designs,9806,9710,96
+affinity_pred_value1,Affinity pred value 1,Dataset positives,73,51,22
+affinity_pred_value1,Affinity pred value 1,Original designs,1954,1934,20
+affinity_pred_value1,Affinity pred value 1,Redesigned variants,7852,7776,76
+affinity_pred_value1,Affinity pred value 1,All designs,9806,9710,96
+affinity_probability_binary1,Affinity probability 1,Dataset positives,73,51,22
+affinity_probability_binary1,Affinity probability 1,Original designs,1954,1934,20
+affinity_probability_binary1,Affinity probability 1,Redesigned variants,7852,7776,76
+affinity_probability_binary1,Affinity probability 1,All designs,9806,9710,96
+affinity_pred_value2,Affinity pred value 2,Dataset positives,73,51,22
+affinity_pred_value2,Affinity pred value 2,Original designs,1954,1934,20
+affinity_pred_value2,Affinity pred value 2,Redesigned variants,7852,7776,76
+affinity_pred_value2,Affinity pred value 2,All designs,9806,9710,96
+affinity_probability_binary2,Affinity probability 2,Dataset positives,73,51,22
+affinity_probability_binary2,Affinity probability 2,Original designs,1954,1934,20
+affinity_probability_binary2,Affinity probability 2,Redesigned variants,7852,7776,76
+affinity_probability_binary2,Affinity probability 2,All designs,9806,9710,96
+sequence_length_aa,Sequence length,Dataset positives,73,73,0
+sequence_length_aa,Sequence length,Original designs,1954,1954,0
+sequence_length_aa,Sequence length,Redesigned variants,7852,7852,0
+sequence_length_aa,Sequence length,All designs,9806,9806,0
+molecular_weight_da_est,Molecular weight,Dataset positives,73,73,0
+molecular_weight_da_est,Molecular weight,Original designs,1954,1954,0
+molecular_weight_da_est,Molecular weight,Redesigned variants,7852,7852,0
+molecular_weight_da_est,Molecular weight,All designs,9806,9806,0
+net_charge_ph7_est,Net charge at pH 7,Dataset positives,73,73,0
+net_charge_ph7_est,Net charge at pH 7,Original designs,1954,1954,0
+net_charge_ph7_est,Net charge at pH 7,Redesigned variants,7852,7852,0
+net_charge_ph7_est,Net charge at pH 7,All designs,9806,9806,0
+absolute_charge_density,Absolute charge density,Dataset positives,73,73,0
+absolute_charge_density,Absolute charge density,Original designs,1954,1954,0
+absolute_charge_density,Absolute charge density,Redesigned variants,7852,7852,0
+absolute_charge_density,Absolute charge density,All designs,9806,9806,0
+isoelectric_point_est,Isoelectric point,Dataset positives,73,73,0
+isoelectric_point_est,Isoelectric point,Original designs,1954,1954,0
+isoelectric_point_est,Isoelectric point,Redesigned variants,7852,7852,0
+isoelectric_point_est,Isoelectric point,All designs,9806,9806,0
+gravy_kd,GRAVY hydropathy,Dataset positives,73,73,0
+gravy_kd,GRAVY hydropathy,Original designs,1954,1954,0
+gravy_kd,GRAVY hydropathy,Redesigned variants,7852,7852,0
+gravy_kd,GRAVY hydropathy,All designs,9806,9806,0
+polar_fraction,Polar fraction,Dataset positives,73,73,0
+polar_fraction,Polar fraction,Original designs,1954,1954,0
+polar_fraction,Polar fraction,Redesigned variants,7852,7852,0
+polar_fraction,Polar fraction,All designs,9806,9806,0
+hydrophobic_fraction,Hydrophobic fraction,Dataset positives,73,73,0
+hydrophobic_fraction,Hydrophobic fraction,Original designs,1954,1954,0
+hydrophobic_fraction,Hydrophobic fraction,Redesigned variants,7852,7852,0
+hydrophobic_fraction,Hydrophobic fraction,All designs,9806,9806,0
+aromatic_fraction,Aromatic fraction,Dataset positives,73,73,0
+aromatic_fraction,Aromatic fraction,Original designs,1954,1954,0
+aromatic_fraction,Aromatic fraction,Redesigned variants,7852,7852,0
+aromatic_fraction,Aromatic fraction,All designs,9806,9806,0
+max_hydrophobic_run,Max hydrophobic run,Dataset positives,73,73,0
+max_hydrophobic_run,Max hydrophobic run,Original designs,1954,1954,0
+max_hydrophobic_run,Max hydrophobic run,Redesigned variants,7852,7852,0
+max_hydrophobic_run,Max hydrophobic run,All designs,9806,9806,0
+solubility_tendency_score_0_100,Solubility tendency,Dataset positives,73,73,0
+solubility_tendency_score_0_100,Solubility tendency,Original designs,1954,1954,0
+solubility_tendency_score_0_100,Solubility tendency,Redesigned variants,7852,7852,0
+solubility_tendency_score_0_100,Solubility tendency,All designs,9806,9806,0
+aggregation_risk_score_0_100,Aggregation risk,Dataset positives,73,73,0
+aggregation_risk_score_0_100,Aggregation risk,Original designs,1954,1954,0
+aggregation_risk_score_0_100,Aggregation risk,Redesigned variants,7852,7852,0
+aggregation_risk_score_0_100,Aggregation risk,All designs,9806,9806,0
+passive_permeability_tendency_0_100,Passive permeability tendency,Dataset positives,73,73,0
+passive_permeability_tendency_0_100,Passive permeability tendency,Original designs,1954,1954,0
+passive_permeability_tendency_0_100,Passive permeability tendency,Redesigned variants,7852,7852,0
+passive_permeability_tendency_0_100,Passive permeability tendency,All designs,9806,9806,0
+sequence_liability_count,Sequence liability count,Dataset positives,73,73,0
+sequence_liability_count,Sequence liability count,Original designs,1954,1954,0
+sequence_liability_count,Sequence liability count,Redesigned variants,7852,7852,0
+sequence_liability_count,Sequence liability count,All designs,9806,9806,0
+sequence_stability_score_0_100,Sequence stability,Dataset positives,73,73,0
+sequence_stability_score_0_100,Sequence stability,Original designs,1954,1954,0
+sequence_stability_score_0_100,Sequence stability,Redesigned variants,7852,7852,0
+sequence_stability_score_0_100,Sequence stability,All designs,9806,9806,0
+peptide_drug_likeness_score_0_100,Drug likeness,Dataset positives,73,73,0
+peptide_drug_likeness_score_0_100,Drug likeness,Original designs,1954,1954,0
+peptide_drug_likeness_score_0_100,Drug likeness,Redesigned variants,7852,7852,0
+peptide_drug_likeness_score_0_100,Drug likeness,All designs,9806,9806,0
+structure_bottleneck,"min(pTM, ipTM)",Dataset positives,73,51,22
+structure_bottleneck,"min(pTM, ipTM)",Original designs,1954,1934,20
+structure_bottleneck,"min(pTM, ipTM)",Redesigned variants,7852,7776,76
+structure_bottleneck,"min(pTM, ipTM)",All designs,9806,9710,96
+affinity_consensus,Affinity consensus,Dataset positives,73,51,22
+affinity_consensus,Affinity consensus,Original designs,1954,1934,20
+affinity_consensus,Affinity consensus,Redesigned variants,7852,7776,76
+affinity_consensus,Affinity consensus,All designs,9806,9710,96
+structure_quality,Structure quality,Dataset positives,73,51,22
+structure_quality,Structure quality,Original designs,1954,1934,20
+structure_quality,Structure quality,Redesigned variants,7852,7776,76
+structure_quality,Structure quality,All designs,9806,9710,96
+developability_score,Developability score,Dataset positives,73,73,0
+developability_score,Developability score,Original designs,1954,1954,0
+developability_score,Developability score,Redesigned variants,7852,7852,0
+developability_score,Developability score,All designs,9806,9806,0

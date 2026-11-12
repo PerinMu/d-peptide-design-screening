@@ -33,11 +33,10 @@ Tables 1 and 3 to the computational release. The
 [recovery audit](docs/COMPUTATIONAL_DATA_RECOVERY.md) documents coverage,
 candidate score discrepancies, and archive verification.
 
-The manuscript draft includes an ROC analysis, but this release has no ROC
-script or complete positive-label definition. It contains 54 literature
-records with Boltz-2 metrics and 76 sequence-reference records; the recorded
-evidence classes do not identify 54 unambiguous positives. See the
-[Methods audit](docs/PAPER_METHODS.md#release-audit-notes).
+The [hIAPP Fig. 2 analysis](targets/hiapp/results/figure2/README.md) rebuilds
+the group-comparison AUC matrix and Prism data. Dataset positives are
+reference entries annotated as `reported_inhibitory` (73 entries, 51 with
+Boltz-2 scores). The AUCs describe separation between computational groups.
 
 ## Reproduce the hIAPP CPU screening
 

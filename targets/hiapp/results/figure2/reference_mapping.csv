@@ -1,0 +1,77 @@
+scored_csv_line,reference_entry_id,record_id,name,peptide_name,activity_evidence_class,has_boltz_ptm,prediction_id_match,input_smiles_match,exact_name_match,mapping_status,included_as_positive
+9810,1-1,HIAPP-LIT-0001,NFGAIL,NFGAIL,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9811,2-1,HIAPP-LIT-0002,NFGAILSS,NFGAILSS,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9812,2-2,HIAPP-LIT-0003,QYGPILSS,QYGPILSS,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9813,2-3,HIAPP-LIT-0004,NWGPILSS,NWGPILSS,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9814,3-1,HIAPP-LIT-0005,QBP1,QBP1,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9815,4-1,HIAPP-LIT-0006,SNNFGA,SNNFGA,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9816,4-2,HIAPP-LIT-0007,TNNWPL,TNNWPL,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9817,4-3,HIAPP-LIT-0008,TQNWAP,TQNWAP,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9818,4-4,HIAPP-LIT-0009,TQNWVP,TQNWVP,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9819,5-1,HIAPP-LIT-0010,SS,SS,aggregation_promoting,True,True,True,True,stable_id_verified,False
+9820,5-2,HIAPP-LIT-0011,SLS,SLS,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9821,5-3,HIAPP-LIT-0012, LSLS,LSLS,reported_inhibitory,False,True,True,False,stable_id_verified,True
+9822,5-4,HIAPP-LIT-0013,SNS,SNS,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9823,5-5,HIAPP-LIT-0014, NSNS,NSNS,reported_inhibitory,False,True,True,False,stable_id_verified,True
+9824,6-1,HIAPP-LIT-0015,dfPSMα3,dfPSMα3,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9825,7-1,HIAPP-LIT-0016,cyclo-CHVVGVI,cyclo-CHVVGVI,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9826,7-2,HIAPP-LIT-0017,cyclo-CDLGVFR,cyclo-CDLGVFR,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9827,7-3,HIAPP-LIT-0018,cyclo-CRCVFSG,cyclo-CRCVFSG,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9828,8-1,HIAPP-LIT-0019,C5,C5,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9829,9-1,HIAPP-LIT-0020,HSSQN,HSSQN,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9830,9-2,HIAPP-LIT-0021,HSSNQ,HSSNQ,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9831,10-1,HIAPP-LIT-0022,FGAΔFL,FGAΔFL,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9832,10-2,HIAPP-LIT-0023,FGAΔFI,FGAΔFI,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9833,11-1,HIAPP-LIT-0024,ANFLVH,ANFLVH,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9834,12-1,HIAPP-LIT-0025,AT,AT,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9835,12-2,HIAPP-LIT-0026,SA,SA,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9836,12-3,HIAPP-LIT-0027,KS,KS,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9837,12-4,HIAPP-LIT-0028,KT,KT,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9838,12-5,HIAPP-LIT-0029,KN,KN,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9839,12-6,HIAPP-LIT-0030,RF,RF,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9840,12-7,HIAPP-LIT-0031,cyclic-KS,cyclic-KS,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9841,12-8,HIAPP-LIT-0032,cyclic-KN,cyclic-KN,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9842,12-9,HIAPP-LIT-0033,cyclic-KT,cyclic-KT,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9843,13-1,HIAPP-LIT-0034,IAPP-GI,IAPP-GI,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9844,14-1,HIAPP-LIT-0035,Pramlintide (PM),Pramlintide (PM),reported_inhibitory,False,True,True,True,stable_id_verified,True
+9845,15-1,HIAPP-LIT-0036,NYGAILSS,NYGAILSS,mixed_or_adverse,True,True,True,True,stable_id_verified,False
+9846,16-1,HIAPP-LIT-0037,I26P mutant,I26P mutant,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9847,17-1,HIAPP-LIT-0038,rIAPP,rIAPP,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9848,18-1,HIAPP-LIT-0039,Arg-1,Arg-1,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9849,18-2,HIAPP-LIT-0040,Arg-2,Arg-2,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9850,18-3,HIAPP-LIT-0041,Mem-T,Mem-T,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9851,19-1,HIAPP-LIT-0042,H18K-IAPP,H18K-IAPP,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9852,19-2,HIAPP-LIT-0043,H18R-IAPP,H18R-IAPP,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9853,19-3,HIAPP-LIT-0044,H18E-IAPP,H18E-IAPP,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9854,19-4,HIAPP-LIT-0045,H18A-IAPP,H18A-IAPP,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9855,20-1,HIAPP-LIT-0046,Inhibitor-2,Inhibitor-2,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9856,20-2,HIAPP-LIT-0047,Inhibitor-3,Inhibitor-3,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9857,21-1,HIAPP-LIT-0048,TK9,TK9,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9858,22-1,HIAPP-LIT-0049,FLPNF,FLPNF,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9859,23-1,HIAPP-LIT-0050,Tyr2,Tyr2,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9860,23-2,HIAPP-LIT-0051,Tyr3,Tyr3,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9861,24-1,HIAPP-LIT-0052,LA12,LA12,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9862,25-1,HIAPP-LIT-0053,SNNF(N-Me)GA(N-Me)ILSS,SNNF(N-Me)GA(N-Me)ILSS,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9863,25-2,HIAPP-LIT-0054,NF(N-Me)GA(N-Me)IL,NF(N-Me)GA(N-Me)IL,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9864,26-1,HIAPP-LIT-0055,IO8,IO8,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9865,26-2,HIAPP-LIT-0056,N1-IO8,N1-IO8,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9866,26-3,HIAPP-LIT-0057,N2-IO8,N2-IO8,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9867,27-1,HIAPP-LIT-0058,WW2,WW2,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9868,27-2,HIAPP-LIT-0059,WW4,WW4,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9869,27-3,HIAPP-LIT-0060,YY2,YY2,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9870,28-1,HIAPP-LIT-0061,AP5,AP5,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9871,29-1,HIAPP-LIT-0062,Aib-NF-Aib-VHSS,Aib-NF-Aib-VHSS,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9872,29-2,HIAPP-LIT-0063,Aib-NF-Aib-VH,Aib-NF-Aib-VH,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9873,29-3,HIAPP-LIT-0064,Aib-NF-Aib-V,Aib-NF-Aib-V,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9874,30-1,HIAPP-LIT-0065,NFGAX2L(X2 = 2-aminobenzoic acid),NFGAX2L(X2 = 2-aminobenzoic acid),reported_inhibitory,True,True,True,False,stable_id_verified,True
+9875,30-2,HIAPP-LIT-0066,NFX2AX2L (X2 = 2-aminobenzoic acid),NFX2AX2L (X2 = 2-aminobenzoic acid),reported_inhibitory,True,True,True,False,stable_id_verified,True
+9876,31-1,HIAPP-LIT-0067,β-cap-WW2,β-cap-WW2,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9877,31-2,HIAPP-LIT-0068,cyclo-WW2,cyclo-WW2,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9878,32-1,HIAPP-LIT-0069,MCIP 2a,MCIP 2a,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9879,32-2,HIAPP-LIT-0070,MCIP 2b,MCIP 2b,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9880,32-3,HIAPP-LIT-0071,MCIP 2e,MCIP 2e,reported_noninhibitory,True,True,True,True,stable_id_verified,False
+9881,33-1,HIAPP-LIT-0072,C14-RRRR-NH2,C14-RRRR-NH2,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9882,34-1,HIAPP-LIT-0073,NCAM1-PrP,NCAM1-PrP,reported_inhibitory,False,True,True,True,stable_id_verified,True
+9883,35-1,HIAPP-LIT-0074,TNGQ,TNGQ,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9884,35-2,HIAPP-LIT-0075,MANT,MANT,reported_inhibitory,True,True,True,True,stable_id_verified,True
+9885,35-3,HIAPP-LIT-0076,YMSV,YMSV,reported_inhibitory,True,True,True,True,stable_id_verified,True

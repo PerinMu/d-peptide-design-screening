@@ -123,14 +123,11 @@ results may depend on assay construct, concentration, ratio, and protocol, so
 the records should not be ranked quantitatively across studies without
 rechecking the primary papers.
 
-The manuscript draft reports an ROC analysis using reference peptides and
-designed sequences. The repository has 54 reference rows with Boltz-2 metrics
-and 76 sequence-reference rows, but no ROC implementation, derived ROC data,
-or explicit rule mapping the source-text evidence classes to binary labels.
-Among the 54 scored reference rows, two names do not exactly join to this
-literature table; the matched rows include inhibitory, non-inhibitory,
-aggregation-promoting, and mixed/adverse annotations. The positive set used in
-the draft therefore cannot be reconstructed from these annotations alone.
+For [Fig. 2](../targets/hiapp/results/figure2/README.md), the scored table
+joins to all 76 literature records by `reference_entry_id`, including the
+54 entries with Boltz-2 metrics. The `reported_inhibitory` rule retains 73
+entries, 51 of which have Boltz-2 scores. This label describes heterogeneous
+literature evidence and does not change the 76-entry P3 reference set.
 
 The hIAPP screening input
 [`reference_inhibitors_smiles.csv`](../targets/hiapp/data/designs/reference_inhibitors_smiles.csv)

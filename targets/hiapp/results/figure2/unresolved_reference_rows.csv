@@ -1,0 +1,1 @@
+scored_csv_line,reference_entry_id,record_id,name,peptide_name,activity_evidence_class,has_boltz_ptm,prediction_id_match,input_smiles_match,exact_name_match,mapping_status,included_as_positive

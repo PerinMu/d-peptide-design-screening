@@ -9,7 +9,7 @@
 | BoltzIF redesign table | Generated during the 2026-08-04 campaign | Backbone-conditioned sequence diversification | Project-generated model output; parameters committed |
 | Boltz-2 score table | Generated 2026-08-04 to 2026-08-08, including retry batches | Complex-confidence and relative affinity signals | Project-generated model output; collection and retry scripts committed |
 | Automatic MSA input | Requested through Boltz `--use_msa_server` during the prediction window | hIAPP target alignment context | Installed Boltz 2.2.1 default: `https://api.colabfold.com`; service version, request log, and returned alignment archive were not retained |
-| Reference inhibitor set | Literature/source workbook, 76 usable entries with a grouped English source index | Descriptor-space context for P3 novelty; the manuscript also depicts an ROC analysis that is not reproducible from the released materials | Row-group source status and DOI verification flags are committed; original papers remain authoritative |
+| Reference inhibitor set | Literature/source workbook, 76 usable entries with a grouped English source index | Descriptor-space context for P3 novelty; the Fig. 2 comparison uses a separately defined inhibitory subset | Row-group source status and DOI verification flags are committed; original papers remain authoritative |
 | Final 12 manifest and mmCIF files | Project screening and manual structure review | Experimental shortlist | Project-generated results; all values are computational unless explicitly labeled otherwise |
 
 The repository does not contain a hidden or restricted dataset. The main
@@ -55,8 +55,8 @@ policies are described by their authors.
 
 - In the committed screening code, the reference set contributes to a
   four-descriptor novelty distance; it is not a training, validation, or test
-  set. The manuscript's separate ROC analysis has no committed label mapping or
-  implementation, so its use of these records cannot be verified.
+  set. The [Fig. 2 analysis](../results/figure2/README.md) uses a stable-ID
+  join and an explicit inhibitory evidence rule for group comparisons.
 - No wet-lab activity measurement was used for threshold selection or final
   candidate ranking.
 - All candidate percentile scores are computed within the design/IF pool.
@@ -101,10 +101,9 @@ papers. Normalized citations, source types, and source-entry crosswalks are give
 in `data/designs/reference_inhibitor_sources.csv`. The scored table has 54
 literature-reference rows with Boltz-2 metrics, but its rows do not carry the
 curated activity labels. The literature table has heterogeneous evidence
-classes, and two modified-peptide names do not exactly join to the scored rows.
-No reference-set ROC/AUC result can be reproduced from the committed code and
-label mapping. The draft's ROC claim needs author-supplied definitions and
-analysis provenance.
+classes. All 54 scored rows resolve by stable ID, including the two
+modified-peptide name variants. The Fig. 2 positive subset has 73 entries,
+of which 51 have Boltz-2 metrics.
 
 Overlap with an external model's training data or an undisclosed evaluation
 set has not been independently checked.
